@@ -69,6 +69,67 @@ app.get('/favorieten', async function (request, response) {
 
 });
 
+
+
+app.post('/favorieten', async function (request, response) {
+
+  const houseId = request.body.houseId;
+
+  // dit is mijn lijstid17 dezelijsthaal ik dusop
+  const favResponse = await fetch(
+    'https://fdnd-agency.directus.app/items/f_list/17?fields=*.*'
+  );
+
+  const favJSON = await favResponse.json();
+
+  // kijken of huis al is opgeslagen
+  const favHuis = favJSON.data.houses.find(
+    house => house.f_houses_id == houseId
+  );
+
+  if (favHuis) {
+
+    await fetch( //de delete patchaaaa
+      'https://fdnd-agency.directus.app/items/f_list/17',
+      {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify({
+          houses: {
+            delete: [favHuis.id]
+          }
+        })
+      }
+    );
+
+  } else {
+
+    await fetch( 
+      'https://fdnd-agency.directus.app/items/f_list/17',
+      {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify({
+          houses: {
+            create: [
+              {
+                f_houses_id: houseId
+              }]
+            }
+        })
+    });
+  }
+  response.redirect('/favorieten');
+});
+
+
+
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
 app.set("port", process.env.PORT || 8001);
