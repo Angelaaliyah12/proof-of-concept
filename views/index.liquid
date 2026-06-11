@@ -5,7 +5,10 @@
 <ul class="container-huizen">
     {% for huis in funda %}
     <li class="lijst-huizen">
+
+<a href="/detail/{{huis.id}}">
 <img src="https://fdnd-agency.directus.app/assets/{{huis.poster_image}}">
+</a>
 
 <p class="straat">{{huis.street}} {{huis.house_nr}}</p>
 <p class="stad">{{huis.postal_code}} {{huis.city}}</p>
