@@ -31,7 +31,14 @@ app.get('/', async function(request, response){
     + new URLSearchParams(params)
     )
     const fundaResponseJson = await fundaResponse.json();
-    
+     //Prijs in euro omzetten met euro teken en punten//
+    //Krijn laten zien met chama//
+fundaResponseJson.data.forEach(huis => {
+  huis.price = new Intl.NumberFormat("nl-NL", {
+    style: "currency",
+    currency: "EUR",
+  }).format(huis.price);
+});
     response.render("index.liquid",{
         funda: fundaResponseJson.data
     })
