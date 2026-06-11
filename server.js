@@ -44,6 +44,15 @@ fundaResponseJson.data.forEach(huis => {
     })
 });
 
+app.get('/detail/:id', async function(request, response){
+    const id= request.params.id
+    const detailResponse= await fetch ('https://fdnd-agency.directus.app/items/f_houses/'
+         + id)
+         const detailResponseJson = await detailResponse.json()
+         response.render("detail.liquid",{
+            detail: detailResponseJson.data
+         })
+});
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
