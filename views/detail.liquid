@@ -1,0 +1,62 @@
+{%include 'partials/head.liquid'%}
+
+<main>
+
+<img src="https://fdnd-agency.directus.app/assets/{{ detail.poster_image}}">
+<button class="deel-icon">
+  <svg class="deel-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" role="presentation" viewBox="0 0 48 48"><path d="M36 31.3a6 6 0 00-4.81 2.42l-13.51-7.8a5.92 5.92 0 00.08-3.58l13.7-7.91a6 6 0 10-1.33-2.69l-13.89 8a6 6 0 10-.2 8.68l14 8.09A6 6 0 1036 31.3zm0-23.78a3 3 0 11-3 3 3 3 0 013-3zM12 27a3 3 0 113-3 3 3 0 01-3 3zm24 13.3a3 3 0 113-3 3 3 0 01-3 3z"></path></svg>
+</button>
+
+
+                  <button type="submit" class="opslaan-knop" aria-label="sla huis op">
+                     <svg class="opslaan-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+    fill="currentColor" role="presentation" viewBox="0 0 48 48" data-v-cfc93cbe="">
+    <path d="M39 9.86A10.17 10.17 0 0032 7a9.9 9.9 0 00-6 2 10.1 10.1 0 00-2 2 10.1 10.1 0 00-2-2 9.91 9.91 0 00-12 0 9.9 9.9 0 00-4 8c0 15 16 24 18 24s18-9 18-24a10 10 0 00-3-7.14zm-15 28a29.61 29.61 0 01-12.72-12.1A18.77 18.77 0 019 17a7 7 0 0113.41-2.81c.06.14.11.29.17.44a1.49 1.49 0 002.82 0c.05-.15.11-.3.17-.44A7 7 0 0139 17a18.77 18.77 0 01-2.28 8.81A29.61 29.61 0 0124 37.91z">
+    </path></svg>
+                  </button>
+
+
+<h1>{{detail.street}} {{detail.house_nr}}</h1>
+<p>{{detail.postal_code}} {{detail.city}}</p>
+<p>{{detail.price}}</p>
+<div class="kaart-container">
+<img class="kaart-svg" src="https://nuxt.fstatic.nl/716adbe2a1f60dad/detail/_nuxt/map.Bc4Msx4Z.svg" aria-hidden="true" height="68" width="68">
+ <p class="kaart-tekst">Kaart</p>
+</div>
+
+<div class="woning-icons">
+  <div class="container-m2">
+  <svg class="svg-m2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" role="presentation" viewBox="0 0 48 48">
+  <path d="M38.5 32.25v-16.5a5 5 0 10-6.25-6.25h-16.5a5 5 0 10-6.25 6.25v16.5a5 5 0 106.25 6.25h16.5a5 5 0 106.25-6.25zm-6.25 3.25h-16.5a5 5 0 00-3.25-3.25v-16.5a5 5 0 003.25-3.25h16.5a5 5 0 003.25 3.25v16.5a5 5 0 00-3.25 3.25zM37 9a2 2 0 11-2 2 2 2 0 012-2zM11 9a2 2 0 11-2 2 2 2 0 012-2zm0 30a2 2 0 112-2 2 2 0 01-2 2zm26 0a2 2 0 112-2 2 2 0 01-2 2z">
+  </path></svg>
+  <span class="svg-m2-tekst">{{detail.m2}}</span>
+  </div>
+
+<div class="container-garden">
+  <svg class="svg-m2-garden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" role="presentation" viewBox="0 0 48 48" >
+  <path d="M43 5.5A1.5 1.5 0 0041.5 4h-35A1.5 1.5 0 005 5.5v37A1.5 1.5 0 006.5 44h35a1.5 1.5 0 001.5-1.5zm-35 9h13v5a1.5 1.5 0 001.5 1.5H30v20H8zm25 5a1.5 1.5 0 00-1.5-1.5H24v-5a1.5 1.5 0 00-1.5-1.5H8V7h32v34h-7z">
+  </path></svg>
+  <span class="svg-garden-tekst">{{detail.m2_garden}}</span>
+</div>
+
+<div class="container-kamers">
+  <svg class="svg-kamers" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" role="presentation" viewBox="0 0 48 48" >
+  <path d="M11 20l-3.999 5.999h33.998L37 20h3l3.999 5.999L44 26v9.5a1.5 1.5 0 01-1.5 1.5H39v1.5a1.5 1.5 0 01-3 0V37H12v1.5a1.5 1.5 0 01-3 0V37H5.5A1.5 1.5 0 014 35.5V26l.001-.001L8 20h3zm30 9H7v5h34v-5zM38.5 8A1.5 1.5 0 0140 9.5V20l-9-.001V21.5a1.5 1.5 0 01-1.5 1.5h-11a1.5 1.5 0 01-1.5-1.5v-1.501L8 20V9.5A1.5 1.5 0 019.5 8h29zM28 17h-8v3h8v-3zm9-6H11v5.999h6V15.5a1.5 1.5 0 011.5-1.5h11a1.5 1.5 0 011.5 1.5v1.499h6V11z">
+  </path></svg>
+  <span class="svg-kamers-tekst">{{detail.rooms}}</span>
+  </div>
+
+</div>
+
+<div class="container-machine">
+<svg class="machine-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" role="presentation" viewBox="0 0 48 48">
+<circle cx="16" cy="22" r="2"></circle><circle cx="24" cy="22" r="2"></circle><circle cx="32" cy="22" r="2"></circle><circle cx="16" cy="29" r="2"></circle><circle cx="24" cy="29" r="2"></circle><circle cx="32" cy="29" r="2"></circle><circle cx="16" cy="36" r="2"></circle><circle cx="24" cy="36" r="2"></circle><circle cx="32" cy="36" r="2"></circle><rect width="20" height="8" x="14" y="9" rx="1" ry="1"></rect>
+<path d="M36 6a1 1 0 011 1v34a1 1 0 01-1 1H12a1 1 0 01-1-1V7a1 1 0 011-1h24m0-3H12a4 4 0 00-4 4v34a4 4 0 004 4h24a4 4 0 004-4V7a4 4 0 00-4-4z">
+</path></svg>
+<span class="machine-tekst">Wat worden mijn maandlasten?</span>
+</div>
+
+<h2>Omschrijving</h2>
+<p>{{detail.description}}</p>
+</main>
+{% include 'partials/foot.liquid' %}
