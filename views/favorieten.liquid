@@ -1,0 +1,99 @@
+{%include 'partials/head.liquid'%}
+
+<div>
+<svg class="huis-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" role="presentation" viewBox="0 0 48 48">
+<path d="M34.718 23.938l3 3.332v15.326a1.5 1.5 0 01-1.497 1.5H11.218a1.5 1.5 0 01-1.5-1.5V27.271l3-3.332v17.157h22V23.938zM23.735 4.998c.082.002.163.02.244.035.1.018.2.036.296.074.099.04.19.103.28.166.069.047.14.09.2.15.026.023.06.033.084.06L42.05 24.6a1.5 1.5 0 01-2.229 2.008l-2.106-2.339-3-3.332-11-12.216-11 12.217-3 3.332-2.101 2.333a1.5 1.5 0 01-2.23-2.007L22.598 5.48c.028-.032.068-.045.098-.073.039-.036.083-.06.125-.093.116-.089.237-.167.368-.217.06-.023.122-.032.184-.046.12-.029.24-.052.362-.052z">
+</path></svg> /
+<span>Mijn account</span> /
+<span>Favorieten</span>
+</div>
+<main>
+<h1>Favorieten</h1>
+ <p>In dit overzicht vind je al je favoriete huizen terug. 
+    Maak het jezelf makkelijker door huizen te bewaren en 
+    notities toe te voegen over het huis, 
+    de buurt en andere belangrijke details voor je zoektocht.</p> 
+<span class="lijn"></span>
+
+<div class="container-bell">
+  <svg class="bell-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" role="presentation" viewBox="0 0 48 48" aria-hidden="true">
+  <path d="M24 7a9 9 0 019 9v5.62a3 3 0 001.5 2.6A9 9 0 0139 32a8.66 8.66 0 01-.06 1H9.06A8.66 8.66 0 019 32a9 9 0 014.5-7.79 3 3 0 001.5-2.6V16a9 9 0 019-9m0-3a12 12 0 00-12 12v5.62A11.94 11.94 0 006.7 36h34.6A11.94 11.94 0 0036 21.62V16A12 12 0 0024 4zm0 37a3 3 0 01-2.82-2h-3.09a6 6 0 0011.82 0h-3.09A3 3 0 0124 41z">
+  </path></svg>
+  <span class="bell-tekst">Beheer meldingen</span>
+</div>
+
+<div class="container-beschikbaar">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" role="presentation" viewBox="0 0 48 48">
+  <path fill-rule="evenodd" d="M14.5 16a2.5 2.5 0 100-5 2.5 2.5 0 000 5zm0 3a5.502 5.502 0 005.293-4H40.5a1.5 1.5 0 000-3H19.793a5.502 5.502 0 00-10.586 0H7.5a1.5 1.5 0 000 3h1.707a5.502 5.502 0 005.293 4zm19 7a2.5 2.5 0 100-5 2.5 2.5 0 000 5zm5.293-1a5.502 5.502 0 01-10.586 0H7.5a1.5 1.5 0 010-3h20.707a5.502 5.502 0 0110.586 0H40.5a1.5 1.5 0 010 3h-1.707zM17 34.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm2.793 1.5a5.502 5.502 0 01-10.586 0H7.5a1.5 1.5 0 010-3h1.707a5.502 5.502 0 0110.586 0H40.5a1.5 1.5 0 010 3H19.793z" clip-rule="evenodd">
+  </path></svg>
+  <span class="besch-tekst">Beschikbaarheid</span>
+</div>
+
+    {% comment %} Empty state {% endcomment %}
+    {% comment %} <img alt="Tip: bewaar een huis" aria-hidden="true" class="huis-img" role="presentation" width="120" height="182" src="https://nuxt.fstatic.nl/134ef8a2b9a9b333/favorieten/_nuxt/favourites.Cc-ltJ0E.svg">
+<h2>Tip: bewaar een huis</h2>
+<p>Tik op het hart-icoon bij je favoriete huis om deze toe te voegen aan je favorieten.</p>
+<a href="/" class="index-knop">Start met zoeken</a> {% endcomment %}
+
+
+<ul>
+{% for huis in favorieten %}
+
+  <li>
+
+  <a href="/detail/{{ huis.f_houses_id.id }}">
+    <img class="img"
+      src="https://fdnd-agency.directus.app/assets/{{ huis.f_houses_id.poster_image }}">
+  </a>
+  <svg class="delen-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" role="presentation" viewBox="0 0 48 48">
+  <path d="M36 31.3a6 6 0 00-4.81 2.42l-13.51-7.8a5.92 5.92 0 00.08-3.58l13.7-7.91a6 6 0 10-1.33-2.69l-13.89 8a6 6 0 10-.2 8.68l14 8.09A6 6 0 1036 31.3zm0-23.78a3 3 0 11-3 3 3 3 0 013-3zM12 27a3 3 0 113-3 3 3 0 01-3 3zm24 13.3a3 3 0 113-3 3 3 0 01-3 3z">
+  </path></svg>
+
+  <p>{{ huis.f_houses_id.steet }} {{ huis.f_houses_id.house_nr}}</p>
+  <p>{{ huis.f_houses_id.postal_code}} {{ huis.f_houses_id.city }}</p>
+  <p>{{ huis.f_houses_id.price}}</p>
+  
+<div class="woning-icons">
+  <div class="container-m2">
+  <svg class="svg-m2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" role="presentation" viewBox="0 0 48 48">
+  <path d="M38.5 32.25v-16.5a5 5 0 10-6.25-6.25h-16.5a5 5 0 10-6.25 6.25v16.5a5 5 0 106.25 6.25h16.5a5 5 0 106.25-6.25zm-6.25 3.25h-16.5a5 5 0 00-3.25-3.25v-16.5a5 5 0 003.25-3.25h16.5a5 5 0 003.25 3.25v16.5a5 5 0 00-3.25 3.25zM37 9a2 2 0 11-2 2 2 2 0 012-2zM11 9a2 2 0 11-2 2 2 2 0 012-2zm0 30a2 2 0 112-2 2 2 0 01-2 2zm26 0a2 2 0 112-2 2 2 0 01-2 2z">
+  </path></svg>
+  <span class="svg-m2-tekst">{{ huis.f_houses_id.m2}}</span>
+  </div>
+
+<div class="container-garden">
+  <svg class="svg-m2-garden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" role="presentation" viewBox="0 0 48 48" >
+  <path d="M43 5.5A1.5 1.5 0 0041.5 4h-35A1.5 1.5 0 005 5.5v37A1.5 1.5 0 006.5 44h35a1.5 1.5 0 001.5-1.5zm-35 9h13v5a1.5 1.5 0 001.5 1.5H30v20H8zm25 5a1.5 1.5 0 00-1.5-1.5H24v-5a1.5 1.5 0 00-1.5-1.5H8V7h32v34h-7z">
+  </path></svg>
+  <span class="svg-garden-tekst">{{ huis.f_houses_id.m2_garden}}</span>
+</div>
+
+<div class="container-kamers">
+  <svg class="svg-kamers" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" role="presentation" viewBox="0 0 48 48" >
+  <path d="M11 20l-3.999 5.999h33.998L37 20h3l3.999 5.999L44 26v9.5a1.5 1.5 0 01-1.5 1.5H39v1.5a1.5 1.5 0 01-3 0V37H12v1.5a1.5 1.5 0 01-3 0V37H5.5A1.5 1.5 0 014 35.5V26l.001-.001L8 20h3zm30 9H7v5h34v-5zM38.5 8A1.5 1.5 0 0140 9.5V20l-9-.001V21.5a1.5 1.5 0 01-1.5 1.5h-11a1.5 1.5 0 01-1.5-1.5v-1.501L8 20V9.5A1.5 1.5 0 019.5 8h29zM28 17h-8v3h8v-3zm9-6H11v5.999h6V15.5a1.5 1.5 0 011.5-1.5h11a1.5 1.5 0 011.5 1.5v1.499h6V11z">
+  </path></svg>
+  <span class="svg-kamers-tekst">{{ huis.f_houses_id.rooms}}</span>
+  </div>
+
+</div>
+  <p>{{ huis.f_houses_id.agent}}</p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" role="presentation" viewBox="0 0 48 48">
+  <path d="M42 17a10 10 0 00-18-6 10 10 0 00-18 6c0 15 16 24 18 24s18-9 18-24z">
+  </path></svg>
+<hr>
+
+<div class="container-plus">
+<svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" role="presentation" viewBox="0 0 48 48">
+<path d="M36.5 22.5h-11v-11A1.5 1.5 0 0024 10a1.5 1.5 0 00-1.5 1.5v11h-11a1.5 1.5 0 000 3h11v11A1.5 1.5 0 0024 38a1.5 1.5 0 001.5-1.5v-11h11a1.5 1.5 0 000-3z">
+</path></svg>
+<span class="plus-tekst">Notities toevoegen</span>
+</div>
+
+</li>
+
+{% endfor %}
+
+</ul>
+</main>
+
+{% include 'partials/foot.liquid' %}
