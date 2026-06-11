@@ -1,23 +1,26 @@
 {%include 'partials/head.liquid'%}
 
-<h1 class="h1-index">Woningen</h1>
+<main>
+<h1 class="h1-index">Woningen:</h1>
 
 <ul class="container-huizen">
+
     {% for huis in funda %}
-    <li class="lijst-huizen">
 
-<a href="/detail/{{huis.id}}">
-<img src="https://fdnd-agency.directus.app/assets/{{huis.poster_image}}">
-</a>
+<li class="lijst-huizen">
 
-<p class="straat">{{huis.street}} {{huis.house_nr}}</p>
-<p class="stad">{{huis.postal_code}} {{huis.city}}</p>
-<p class="prijs">{{huis.price}}</p>
-<p class="makelaar">{{huis.agent}}</p>
+    <a href="/detail/{{ huis.id }}">
+        <img class="huis-img" src="https://fdnd-agency.directus.app/assets/{{ huis.poster_image }}">
+    </a>
+
+<p class="straat">{{ huis.street }} {{ huis.house_nr }}</p>
+<p class="stad">{{ huis.postal_code }} {{ huis.city }}</p>
+<p class="prijs">{{ huis.price }}k.k.</p>
+<p class="makelaar">{{ huis.agent }}</p>
 
     </li>
     {% endfor %}
 
 </ul>
-
+</main>
     {%include 'partials/foot.liquid'%}
