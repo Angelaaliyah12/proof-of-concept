@@ -54,6 +54,21 @@ app.get('/detail/:id', async function(request, response){
          })
 });
 
+
+app.get('/favorieten', async function (request, response) {
+
+  const favResponse = await fetch(
+    'https://fdnd-agency.directus.app/items/f_list/17?fields=houses.f_houses_id.*'
+  );
+
+  const favJSON = await favResponse.json();
+
+  response.render('favorieten.liquid', {
+    favorieten: favJSON.data.houses 
+  });
+
+});
+
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
 app.set("port", process.env.PORT || 8001);
