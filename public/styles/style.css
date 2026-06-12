@@ -141,4 +141,48 @@ button{
 }
 
 /*favorieten sectionneeee*/
+
+.route-icons{
+    color:var(--tekst-color)
+}
+.tekst-fav{
+    width: 250px;
+    font-size: 16px;
+}
+.container{
+    color:var(--tekst-color)
+
+}
+.huizen-fav{
+margin-top: 25px;
+    display: grid;
+    grid-template-columns: 250px;
+    gap: 25px;
+    justify-content: center;
+
+    @media (min-width:768px){
+      grid-template-columns: repeat(3, 250px);
+      gap: 5px;   
+    }
+
+    @media (min-width:1024px){
+        grid-template-columns: repeat(4, 250px);
+        gap: 30px;
+    }
+}
+.img-fav{
+    width: 240px;
+    height: auto;
+}
+.woning-icons{
+    display:flex;
+    flex-direction: row;
+}
+.container-plus{
+    color:var(--tekst-color);
+    & :hover{
+  background-color:#E1F2FB;
+    }
+  
+}
 /*footer sectioneeee*/
