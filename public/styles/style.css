@@ -4,6 +4,8 @@
     --hover-header-color: #FF910A;
     --border-color: #E6E6E6 ;
     --tekst-color: #0071B3;
+    --icons-stad-color: #A9A9A9;
+
 }
 body{
     margin:0;
@@ -101,11 +103,42 @@ ul{
 .makelaar{
     color:var(--tekst-color)
 }
+
+
+
 /*detail sectionneeee*/
+
+.container-img{
+     position: relative;
+    display: inline-block; /* of block */
+}
+.detail-img{
+    width:100%;
+    height: auto;
+}
+.container-knoppen{
+    position: absolute;
+    top: 10px;
+    right:10px;
+    display:flex;
+    gap:5px;
+}
+.deel-icon,
+.opslaan-knop
+{
+    color:var(--tekst-color);
+    background-color: var(--header-icon-color);
+    border:none;
+    border-radius: 5px;
+}
 button{
     cursor: pointer;
 }
 
-/*favorieten sectionneeee*/
+.container-beschrijving{
+    display:flex;
+    justify-content: space-between;
+}
 
+/*favorieten sectionneeee*/
 /*footer sectioneeee*/
