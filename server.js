@@ -49,6 +49,12 @@ app.get('/detail/:id', async function(request, response){
     const detailResponse= await fetch ('https://fdnd-agency.directus.app/items/f_houses/'
          + id)
          const detailResponseJson = await detailResponse.json()
+
+        detailResponseJson.data.price = new Intl.NumberFormat("nl-NL", {
+        style: "currency",
+        currency: "EUR",
+    }).format(detailResponseJson.data.price);
+
          response.render("detail.liquid",{
             detail: detailResponseJson.data
          })
@@ -61,10 +67,14 @@ app.get('/favorieten', async function (request, response) {
     'https://fdnd-agency.directus.app/items/f_list/17?fields=houses.f_houses_id.*'
   );
 
-  const favJSON = await favResponse.json();
+  const favResponseJson = await favResponse.json()
+ favResponseJson.data.price = new Intl.NumberFormat("nl-NL", {
+        style: "currency",
+        currency: "EUR",
+    }).format(favResponseJson.data.price);
 
   response.render('favorieten.liquid', {
-    favorieten: favJSON.data.houses 
+    favorieten: favResponseJson.data.houses 
   });
 
 });
@@ -104,6 +114,7 @@ app.post('/favorieten', async function (request, response) {
         })
       }
     );
+
 
   } else {
 
