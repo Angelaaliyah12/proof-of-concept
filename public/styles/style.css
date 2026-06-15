@@ -123,6 +123,46 @@ ul{
     display:flex;
     gap:5px;
 }
+.check-icon{
+    fill: #187428;
+}
+.verwijderd-tekst,
+.succes-tekst{
+    position:fixed;
+    top:60px;
+    right: 20px;
+    background-color: var(--header-icon-color);
+    border-radius: 5px;
+    padding:20px;
+    z-index: 9999;
+      border-left: 6px solid #1aa34a;
+width: 350px;
+}
+.sluit-knop {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  cursor: pointer;
+  &:hover{
+background-color: #E5E5E5;
+border-radius: 5px;
+  }
+}
+#popup-d:target,
+#popup-s:target {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .deel-icon,
 .opslaan-knop
 {
@@ -130,11 +170,54 @@ ul{
     background-color: var(--header-icon-color);
     border:none;
     border-radius: 5px;
+    &:hover{
+        background-color: #E5F6FF;
+    }
+}
+.liked-hart{
+fill: red;
 }
 button{
     cursor: pointer;
 }
 
+.opslaan-knop {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+width:40px;
+height: 40px;
+        fill:var(--tekst-color);
+
+}
+
+.opslaan-svg,
+.liked-hart {
+  width: 30px;
+    height: 30px;
+}
+
+.liked-hart {
+    display: none;
+}
+
+.opslaan-knop.geliked .opslaan-svg {
+    display: none;
+}
+
+.opslaan-knop.geliked .liked-hart {
+    display: block;
+}
+.opslaan-knop.geliked svg {
+  animation: like-pop 0.5s ease;
+}
+@keyframes like-pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.5); }
+  70%  { transform: scale(0.80); }
+  100% { transform: scale(1); }
+}
 .container-beschrijving{
     display:flex;
     justify-content: space-between;
