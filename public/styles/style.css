@@ -109,7 +109,25 @@ ul{
 
 
 /*detail sectionneeee*/
+.adres{
+    display:none;
 
+        @media (min-width:768px){
+            display: flex;
+            align-items: center;
+            gap:5px;
+            }
+}
+.huis-blauw-d,
+.stad-boven-d{
+   display:none;
+
+        @media(min-width: 768px){
+            display:flex;
+            color: var(--tekst-color);
+            fill: var(--tekst-color);  
+        }
+}
 .sticky{
     display:flex;
     gap: 35px;
