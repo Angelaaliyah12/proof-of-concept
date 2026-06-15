@@ -46,6 +46,7 @@ fundaResponseJson.data.forEach(huis => {
 
 app.get('/detail/:id', async function(request, response){
     const id= request.params.id
+    const status = request.query.status 
     const detailResponse= await fetch ('https://fdnd-agency.directus.app/items/f_houses/'
          + id)
          const detailResponseJson = await detailResponse.json()
@@ -56,7 +57,8 @@ app.get('/detail/:id', async function(request, response){
     }).format(detailResponseJson.data.price);
 
          response.render("detail.liquid",{
-            detail: detailResponseJson.data
+            detail: detailResponseJson.data,
+            status: status
          })
 });
 
@@ -74,7 +76,7 @@ app.get('/favorieten', async function (request, response) {
     }).format(favResponseJson.data.price);
 
   response.render('favorieten.liquid', {
-    favorieten: favResponseJson.data.houses 
+    favorieten: favResponseJson.data.houses,
   });
 
 });
@@ -114,7 +116,7 @@ app.post('/favorieten', async function (request, response) {
         })
       }
     );
-
+      response.redirect('/detail/' + houseId + '?status=verwijderd');
 
   } else {
 
@@ -136,7 +138,7 @@ app.post('/favorieten', async function (request, response) {
         })
     });
   }
-  response.redirect('/favorieten');
+  response.redirect('/detail/' + houseId + '?status=succes');
 });
 
 
