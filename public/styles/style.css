@@ -18,6 +18,8 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 200;
 }
 .menu-icon,
 .funda-icon,
@@ -108,9 +110,22 @@ ul{
 
 /*detail sectionneeee*/
 
+.sticky{
+    display:flex;
+    gap: 35px;
+    background-color: var(--header-icon-color);
+    width: 100%;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    margin-top: -40px; 
+
+}
+    
 .container-img{
      position: relative;
     display: inline-block; /* of block */
+    z-index: 2;
 }
 .detail-img{
     width:100%;
