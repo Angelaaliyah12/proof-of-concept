@@ -169,16 +169,96 @@ ul{
 }
 .sticky{
     display:flex;
-    gap: 35px;
+    gap: 15px;
+    justify-content: space-between;
     background-color: var(--header-icon-color);
     width: 100%;
     position: sticky;
     z-index: 100;
     top: 0;
-    margin-top: -40px; 
-
+    padding: 10px 0;
+    margin-top: -70px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-    
+.rechts{
+    display:flex;
+    gap: 15px;
+}
+.straat-prijs{
+    display:none;
+
+ @media (min-width:768px){
+        display:flex;
+flex-direction: column;
+gap:0px;
+margin-left: 50px;
+}
+}
+.opslaan-knop-s{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border:none;
+    background-color: var(--header-icon-color);
+    fill: var(--tekst-color);
+      width: auto;
+  height: 50px;
+}
+.straat-desk,
+.prijs-desk{
+    margin:0;
+}
+
+.straat-desk{
+font-weight: bold;
+font-size: larger;
+}
+.bewaar-tekst{
+    display:none;
+    @media (min-width:768px){
+        display:flex;
+        color: var(--tekst-color)
+    }
+}
+.tel-nummer{
+    display: flex;
+   align-items: center;
+    justify-content: center;
+    fill: var(--tekst-color);
+    color:var(--tekst-color);
+    border: solid 1px var(--tekst-color);
+    border-radius: 5px;
+    background-color: var(--header-icon-color);
+    gap:5px;
+}
+.tel-mob{
+    display:flex;
+    @media (min-width: 768px){
+        display:none;
+    }
+}
+.tel-desk{
+    display:none;
+    @media (min-width:768px){
+        display:flex;
+    }
+}
+.contact-knop{
+    color:white;
+    background-color:#FF910A;
+    border:none;
+    border-radius: 5px;
+    gap:5px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    @media (min-width: 768px){
+    margin-right: 50px;
+}
+}
+.contact-knop svg{
+    fill:white;
+}
 .container-img{
      position: relative;
     display: inline-block; /* of block */
@@ -344,4 +424,5 @@ margin-top: 25px;
     }
   
 }
+
 /*footer sectioneeee*/
