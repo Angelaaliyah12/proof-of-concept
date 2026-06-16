@@ -171,13 +171,16 @@ ul{
 .succes-tekst{
     position:fixed;
     top:60px;
-    right: 20px;
+    right: 10px;
     background-color: var(--header-icon-color);
     border-radius: 5px;
     padding:20px;
     z-index: 9999;
     border-left: 6px solid #1aa34a;
     width: 350px;
+            @media (min-width: 375px){
+             width: clamp(15.625rem, 13.0352rem + 11.0497vw, 21.875rem);
+        }
 }
 .sluit-knop {
   position: absolute;
