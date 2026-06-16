@@ -13,13 +13,44 @@ body{
 /*header sectionnnneeeeeee */
 header{
     padding:20px;
+    gap:5px;
     background-color: var(--header-color);
     color: var(--header-icon-color);
     display: flex;
-    justify-content: space-between;
     align-items: center;
     position: relative;
     z-index: 200;
+    @media (min-width:321px){
+gap: clamp(0.3125rem, -15.3475rem + 78.2998vw, 22.1875rem)
+    }
+     @media (min-width: 768px){
+    display:flex;
+    justify-content: space-between;
+    }
+}
+
+.left-header{
+    display:flex;
+gap: 13px;
+@media (max-width:767px){
+
+}
+    @media (min-width: 767px){
+display:flex;
+gap: 30px;
+margin-left: 50px;
+    }
+}
+.right-header{
+    display:flex;
+gap: 13px;
+@media (max-width:768px){
+
+}
+    @media (min-width: 768px){
+display:flex;
+gap: 30px;
+margin-right: 50px;}
 }
 .menu-icon,
 .funda-icon,
@@ -182,6 +213,7 @@ ul{
              width: clamp(15.625rem, 13.0352rem + 11.0497vw, 21.875rem);
         }
 }
+
 .sluit-knop {
   position: absolute;
   top: 8px;
