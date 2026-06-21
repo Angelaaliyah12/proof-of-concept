@@ -3,7 +3,7 @@
 - Voor mijn project heb ik ervoor gekozen om een index pagina te maken met alle woningen. Zodat je vanuit daar naar de detail pagina kan
 
 - live link: https://proof-of-concept-ehpo.onrender.com/
-
+-figma: https://www.figma.com/design/A1CYVwBsDE6zlqvSFOCx16/Untitled?node-id=0-1&p=f&t=JKqyBVctd54rxtD7-0
 
 ## Inhoudsopgave
 
