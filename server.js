@@ -87,10 +87,21 @@ app.get('/prijs-hoog-laag', async function (request, response) {
 app.get('/detail/:id', async function(request, response){
     const id= request.params.id
     const status = request.query.status 
+		//hier haal ik de huizen op//
     const detailResponse= await fetch ('https://fdnd-agency.directus.app/items/f_houses/'
          + id)
          const detailResponseJson = await detailResponse.json()
+// hier haal ik de favorieten lijstje op//
+	const favResponse = await fetch(
+		'https://fdnd-agency.directus.app/items/f_list/31?fields=*.*'
+	);
+	const favJSON = await favResponse.json();
 
+	// kijken of huis in favorieten lijsjte zit//
+	const isFavoriet = favJSON.data.houses.some(
+		house => house.f_houses_id == id
+	);
+	//prijs formattinggaaaa//
         detailResponseJson.data.price = new Intl.NumberFormat("nl-NL", {
         style: "currency",
         currency: "EUR",
