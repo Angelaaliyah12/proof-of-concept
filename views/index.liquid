@@ -1,26 +1,42 @@
 {%include 'partials/head.liquid'%}
 
-<main>
-<h1 class="h1-index">Woningen:</h1>
+<main class="main-index">
+    <div class="index-kop">
+        <div class="titel-index">
+            <h1 class="h1-index">Woningen:</h1>
+        </div>
+        <div class="sort-wrapper">
+            <details class="sort">
+                <summary>Sort prijs ↓↑</summary>
+                <div class="sort-menu">
+                    <a href="/prijs-laag-hoog">laag naar hoog</a>
+                    <a href="/prijs-hoog-laag">hoog naar laag</a>
+                </div>
+            </details>
+        </div>
+    </div>
 
-<ul class="container-huizen">
+    <div class="index-onderkant">
+        <ul class="container-huizen">
 
-    {% for huis in funda %}
+            {% for huis in funda %}
 
-<li class="lijst-huizen">
+            <li class="lijst-huizen">
+                <a href="/detail/{{ huis.id }}">
+                    <img height="68" width="68" class="huis-img"
+                        src="https://fdnd-agency.directus.app/assets/{{ huis.poster_image }}" alt="foto-huis">
 
-    <a href="/detail/{{ huis.id }}">
-        <img height="68" width="68" class="huis-img" src="https://fdnd-agency.directus.app/assets/{{ huis.poster_image }}" alt="foto-huis">
-    </a>
+                </a>
 
-<p class="straat">{{ huis.street }} {{ huis.house_nr }}</p>
-<p class="stad">{{ huis.postal_code }} {{ huis.city }}</p>
-<p class="prijs">{{ huis.price }}k.k.</p>
-<p class="makelaar">{{ huis.agent }}</p>
+                <p class="straat">{{ huis.street }} {{ huis.house_nr }}</p>
+                <p class="stad">{{ huis.postal_code }} {{ huis.city }}</p>
+                <p class="prijs">{{ huis.price }}k.k.</p>
+                <p class="makelaar">{{ huis.agent }}</p>
 
-    </li>
-    {% endfor %}
+            </li>
 
-</ul>
+            {% endfor %}
+        </ul>
+    </div>
 </main>
-    {%include 'partials/foot.liquid'%}
+{%include 'partials/foot.liquid'%}
