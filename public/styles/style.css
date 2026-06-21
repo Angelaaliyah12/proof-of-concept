@@ -586,13 +586,28 @@ border-radius: 5px;
 
 
 /*favorieten sectionneeee*/
-
-.route-icons{
-    color:var(--tekst-color)
+.main-fav {
+    margin-top: 20px;
+    margin-left: clamp(0.9375rem, -0.4167rem + 6.7708vw, 5rem);
+    margin-right: clamp(0.9375rem, -0.4167rem + 6.7708vw, 5rem);
 }
-.tekst-fav{
-    width: 250px;
+
+.route-icons {
+    color: var(--tekst-color);
+    margin-bottom: 40px;
+}
+
+.tekst-fav {
+    width: clamp(15.625rem, 10.4167rem + 26.0417vw, 31.25rem);
     font-size: 16px;
+}
+
+.lijn {
+    display: block;
+    background-color: var(--header-color);
+    height: 5px;
+    width: 60px;
+    margin-bottom: 30px;
 }
 .container{
     color:var(--tekst-color)
