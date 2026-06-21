@@ -315,6 +315,48 @@ height: 40px;
     }
 }
 
+/*sticky balk icons*/
+.tel-nummer{
+    display: flex;
+   align-items: center;
+    justify-content: center;
+    fill: var(--tekst-color);
+    color:var(--tekst-color);
+    border: solid 1px var(--tekst-color);
+    border-radius: 5px;
+    background-color: var(--header-icon-color);
+    gap:5px;
+}
+.tel-mob{
+    display:flex;
+    @media (min-width: 768px){
+        display:none;
+    }
+}
+.tel-desk{
+    display:none;
+    @media (min-width:768px){
+        display:flex;
+    }
+}
+
+.contact-knop{
+    color:white;
+    background-color:#FF910A;
+    border:none;
+    border-radius: 5px;
+    gap:5px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    @media (min-width: 768px){
+    margin-right: 50px;
+}
+}
+.contact-knop svg{
+    fill:white;
+}
+
 .adres{
     display:none;
 
@@ -351,45 +393,6 @@ font-size: larger;
         display:flex;
         color: var(--tekst-color)
     }
-}
-.tel-nummer{
-    display: flex;
-   align-items: center;
-    justify-content: center;
-    fill: var(--tekst-color);
-    color:var(--tekst-color);
-    border: solid 1px var(--tekst-color);
-    border-radius: 5px;
-    background-color: var(--header-icon-color);
-    gap:5px;
-}
-.tel-mob{
-    display:flex;
-    @media (min-width: 768px){
-        display:none;
-    }
-}
-.tel-desk{
-    display:none;
-    @media (min-width:768px){
-        display:flex;
-    }
-}
-.contact-knop{
-    color:white;
-    background-color:#FF910A;
-    border:none;
-    border-radius: 5px;
-    gap:5px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    @media (min-width: 768px){
-    margin-right: 50px;
-}
-}
-.contact-knop svg{
-    fill:white;
 }
 .container-img{
      position: relative;
