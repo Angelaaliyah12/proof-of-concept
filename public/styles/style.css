@@ -609,6 +609,7 @@ border-radius: 5px;
     width: 60px;
     margin-bottom: 30px;
 }
+/* Fav huizen kaarten*/
 .container {
     color: var(--tekst-color);
 
@@ -620,34 +621,134 @@ border-radius: 5px;
 .huizen-fav{
 margin-top: 25px;
     display: grid;
-    grid-template-columns: 250px;
+    grid-template-columns: clamp(15.625rem, -0.248rem + 79.3651vw, 25rem);
     gap: 25px;
     justify-content: center;
 
-    @media (min-width:768px){
-      grid-template-columns: repeat(3, 250px);
-      gap: 5px;   
+    @media (min-width:510px) {
+        grid-template-columns: repeat(2, 250px);
+        gap: 5px;
     }
 
-    @media (min-width:1024px){
+    @media (min-width:768px) {
+        grid-template-columns: repeat(3, 250px);
+        gap: 5px;
+    }
+
+    @media (min-width:1024px) {
         grid-template-columns: repeat(4, 250px);
         gap: 30px;
     }
 }
-.img-fav{
-    width: 240px;
-    height: auto;
+
+.huizen-lijst-fav {
+    position: relative;
+    margin-bottom: 50px;
+    transition: all 0.3s ease;
+    background: white;
+    border-radius: 16px;
+    border: solid 1px var(--border-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+          transition: transform 0.3s ease;
+&:hover{
+      transform: scale(1.03);
+
 }
-.woning-icons{
-    display:flex;
-    flex-direction: row;
 }
-.container-plus{
-    color:var(--tekst-color);
-    & :hover{
-  background-color:#E1F2FB;
+
+.huizen-lijst-fav p {
+    margin-left: 10px;
+}
+
+.img-fav {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.delen-icon {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: var(--header-icon-color)
+}
+.container-straat-hart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+.straat-fav {
+    color: var(--tekst-color);
+    font-weight: bold;
+}
+.verwijder-knop {
+    border: none;
+    background-color: var(--header-icon-color);
+}
+.verwijder-f {
+    fill: var(--hart-color);
+    transition: all .3s ease-in-out;
+
+    /*bron: https://css-tricks.com/snippets/css/scale-on-hover-with-webkit-transition/*/
+    &:hover {
+        transform: scale(1.5);
     }
-  
+}
+.stad-f {
+    margin: 0;
+}
+.prijs-fav {
+    font-weight: bold;
+}
+/* icons in kaart*/
+.woning-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-left: 10px;
+}
+
+.container-m2,
+.container-garden,
+.container-kamers{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+/**/
+
+.makelaar {
+    color: var(--tekst-color)
+}
+
+
+/*notitie knopje in kaart*/
+.container-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: none;
+    padding: 10px 0;
+    border: none;
+    width: 100%;
+    text-align: left;
+    border-top: solid 1px var(--border-color);
+
+    cursor: pointer;
+    color: var(--tekst-color);
+
+    &:hover {
+        background-color: #E1F2FB;
+    }
+}
+
+.plus-icon {
+    fill: var(--tekst-color);
+    flex-shrink: 0;
 }
 
 /*footer sectioneeee*/
