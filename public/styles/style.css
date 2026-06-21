@@ -678,7 +678,7 @@ margin-top: 25px;
     position: absolute;
     top: 10px;
     right: 20px;
-    color: var(--header-icon-color)
+    fill: var(--header-icon-color)
 }
 .container-straat-hart {
     display: flex;

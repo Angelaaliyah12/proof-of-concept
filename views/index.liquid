@@ -27,9 +27,12 @@
                     {% if huis.poster_image %}
 
                     <img height="68" width="68" class="huis-img"
-                        src="https://fdnd-agency.directus.app/assets/{{ huis.poster_image }}" alt="foto-huis">
+                        src="https://fdnd-agency.directus.app/assets/{{ huis.poster_image }}" alt="foto-huis" 
+                        loading="lazy"
+                        width="240"
+                        height="180">
                     {% else %}
-                    <img alt="Tip: bewaar een huis" aria-hidden="true" class="huis-img-dummy" width="120" height="182"
+                    <img alt="Tip: bewaar een huis" aria-hidden="true" class="huis-img-dummy" width="120" height="182" loading="lazy"
                         src="https://nuxt.fstatic.nl/134ef8a2b9a9b333/favorieten/_nuxt/favourites.Cc-ltJ0E.svg">
                     {% endif %}
 
