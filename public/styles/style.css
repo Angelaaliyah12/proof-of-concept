@@ -398,6 +398,7 @@ height: 40px;
              width: clamp(15.625rem, 13.0352rem + 11.0497vw, 21.875rem);
         }
 }
+
 /*sluitknop van popup*/
 .sluit-knop {
   position: absolute;
@@ -493,28 +494,79 @@ border-radius: 5px;
     gap: 15px;
 }
 
-.straat-desk,
-.prijs-desk{
-    margin:0;
-}
-
-.straat-desk{
-font-weight: bold;
-font-size: larger;
-}
-.bewaar-tekst{
-    display:none;
-    @media (min-width:768px){
-        display:flex;
-        color: var(--tekst-color)
-    }
-}
-
-
+/*info onder main img*/
 .container-beschrijving{
     display:flex;
     justify-content: space-between;
 }
+
+.h1-detail {
+    margin-left: clamp(0.3125rem, -0.9641rem + 6.383vw, 3.125rem);
+}
+.stad-detail {
+    margin-left: clamp(0.3125rem, -0.9641rem + 6.383vw, 3.125rem);
+}
+.kaart-container{
+    margin-right: clamp(0.3125rem, -0.9641rem + 6.383vw, 3.125rem);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.kaart-tekst{
+    color:var(--tekst-color)
+}
+
+.container-prijs-machine{
+    display: flex;
+    gap:10px;
+}
+.prijs-detail {
+    margin-left: clamp(0.3125rem, -0.9641rem + 6.383vw, 3.125rem);
+    font-weight: bold;
+    margin-top: 0%;
+}
+
+.container-machine-desk{
+    display:none;
+
+        @media (min-width:768px){
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--tekst-color);
+        margin: 0 0 10px 0;
+
+        }
+}
+
+.woning-icons-d {
+    margin-left: clamp(0.3125rem, -0.9641rem + 6.383vw, 3.125rem);
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.container-m2,
+.container-garden,
+.container-kamers{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-machine-mobile {
+ color: var(--tekst-color);
+        margin-top: 5px;
+        margin-left: clamp(0.3125rem, -0.9641rem + 6.383vw, 3.125rem);
+            @media (min-width:768px) {
+        display:none;
+    }
+}
+
+
+
 
 /*favorieten sectionneeee*/
 
