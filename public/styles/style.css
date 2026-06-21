@@ -357,6 +357,7 @@ height: 40px;
     fill:white;
 }
 
+/*adres stukje boven main img*/
 .adres{
     display:none;
 
@@ -367,6 +368,7 @@ height: 40px;
                     margin-left: 70px;
             }
 }
+
 .huis-blauw-d,
 .stad-boven-d{
    display:none;
@@ -377,6 +379,53 @@ height: 40px;
             fill: var(--tekst-color);  
         }
 }
+
+/*pop up*/
+.verwijderd-tekst,
+.succes-tekst{
+    position:fixed;
+    top:60px;
+    right: 10px;
+    background-color: var(--header-icon-color);
+    border-radius: 5px;
+    padding:20px;
+    z-index: 9999;
+    border-left: 6px solid #1aa34a;
+    width: 350px;
+            @media (min-width: 375px){
+             width: clamp(15.625rem, 13.0352rem + 11.0497vw, 21.875rem);
+        }
+}
+/*sluitknop van popup*/
+.sluit-knop {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  cursor: pointer;
+  &:hover{
+background-color: #E5E5E5;
+border-radius: 5px;
+  }
+}
+#popup-d:target,
+#popup-s:target {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.check-icon{
+    fill: #187428;
+}
+
 
 .straat-desk,
 .prijs-desk{
@@ -410,49 +459,8 @@ font-size: larger;
     display:flex;
     gap:5px;
 }
-.check-icon{
-    fill: #187428;
-}
-.verwijderd-tekst,
-.succes-tekst{
-    position:fixed;
-    top:60px;
-    right: 10px;
-    background-color: var(--header-icon-color);
-    border-radius: 5px;
-    padding:20px;
-    z-index: 9999;
-    border-left: 6px solid #1aa34a;
-    width: 350px;
-            @media (min-width: 375px){
-             width: clamp(15.625rem, 13.0352rem + 11.0497vw, 21.875rem);
-        }
-}
 
-.sluit-knop {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 28px;
-  height: 28px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-decoration: none;
-  cursor: pointer;
-  &:hover{
-background-color: #E5E5E5;
-border-radius: 5px;
-  }
-}
-#popup-d:target,
-#popup-s:target {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
 
 .deel-icon,
 .opslaan-knop
