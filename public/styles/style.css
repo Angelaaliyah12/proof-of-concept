@@ -5,7 +5,7 @@
     --border-color: #E6E6E6 ;
     --tekst-color: #0071B3;
     --icons-stad-color: #A9A9A9;
-
+    --hart-color: #C93328;
 }
 body{
     margin:0;
@@ -32,9 +32,7 @@ gap: clamp(0.3125rem, -15.3475rem + 78.2998vw, 22.1875rem)
 .left-header{
     display:flex;
 gap: 13px;
-@media (max-width:767px){
 
-}
     @media (min-width: 767px){
 display:flex;
 gap: 30px;
@@ -44,9 +42,6 @@ margin-left: 50px;
 .right-header{
     display:flex;
 gap: 13px;
-@media (max-width:768px){
-
-}
     @media (min-width: 768px){
 display:flex;
 gap: 30px;
@@ -89,6 +84,8 @@ gap: 5px;
 .link-fav-knop{
     text-decoration: none;
     color: var(--header-icon-color);
+        display: flex;
+    margin: 0;
 }
 
 /*index sectioneeee*/
