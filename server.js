@@ -23,6 +23,22 @@ app.engine("liquid", engine.express());
 // Let op: de browser kan deze bestanden niet rechtstreeks laden (zoals voorheen met HTML bestanden)
 app.set("views", "./views");
 
+// bron: (voor express data in alle routes) https://expressjs.com/en/5x/api/application/#appusepath-callback--callback
+app.use(async (req, res, next) => { //inplaats van dat ik het opnieuw bij elke route schrijf//
+
+	const favResponse = await fetch(
+		'https://fdnd-agency.directus.app/items/f_list/31?fields=houses.id'
+	);
+
+	const favJson = await favResponse.json();
+
+	const count = favJson.data.houses.length;
+
+	res.locals.favTeller = count; //https://expressjs.com/en/5x/api/response/ bron: https://www.geeksforgeeks.org/node-js/how-to-create-global-variables-accessible-in-all-views-using-express-nodejs/
+
+	next();
+});
+
 app.get('/', async function(request, response){
     const params={
         fields:'*'
