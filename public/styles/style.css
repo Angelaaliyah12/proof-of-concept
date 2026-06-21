@@ -565,7 +565,24 @@ border-radius: 5px;
     }
 }
 
+/* Omschrijving sectionnaa*/
+.tekst-details{
+    margin-left:clamp(0.3125rem, -0.9641rem + 6.383vw, 3.125rem);
+    display: flex;
+    flex-direction: column;
+}
+.tekst-details p{
+    width: clamp(17.5rem, 11.2589rem + 31.2057vw, 31.25rem);
+}
 
+.omschr{
+    margin-bottom: 50px;
+}
+.omschrijving summary{
+    color:#0071B3;
+    cursor:pointer;
+    margin-top:1rem;
+}
 
 
 /*favorieten sectionneeee*/
