@@ -139,16 +139,15 @@ margin: 0;
     }
 }
 
+
+/* Huizen lijst*/
+
 ul{
     list-style: none;
     padding:0;
     margin:0;
 }
-.container-index{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 .container-huizen{
     display: grid;
     grid-template-columns: 250px;
@@ -163,6 +162,26 @@ ul{
     @media (min-width:1024px){
         grid-template-columns: repeat(4, 250px);
         gap: 30px;
+    }
+}
+
+/* scroll animatie */
+.lijst-huizen {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+
+/* bron: https://www.youtube.com/watch?v=0TnO1GzKWPc */
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.9;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
     }
 }
 
