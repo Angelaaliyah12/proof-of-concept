@@ -89,9 +89,54 @@ gap: 5px;
 }
 
 /*index sectioneeee*/
+.main-index {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    margin-top: 20px;
+    margin-left: clamp(0.9375rem, 0.2083rem + 3.6458vw, 3.125rem);
+}
+
+.index-kop {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
 .h1-index{
-margin: 20px 0px 40px 40px;
+margin: 0;
+}
+
+/* prijs sortering */
+
+.sort-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.sort {
+    position: relative;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+.sort-menu {
+    margin-top: 5px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    z-index: 2500;
+    position: absolute;
+}
+
+.sort-menu a {
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+        font-weight: bold;
+    }
 }
 
 ul{
