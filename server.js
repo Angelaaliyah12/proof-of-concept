@@ -109,7 +109,9 @@ app.get('/detail/:id', async function(request, response){
 
          response.render("detail.liquid",{
             detail: detailResponseJson.data,
-            status: status
+            status: status,
+			isFavoriet: isFavoriet
+
          })
 });
 
