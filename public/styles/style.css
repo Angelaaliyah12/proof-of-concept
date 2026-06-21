@@ -609,9 +609,13 @@ border-radius: 5px;
     width: 60px;
     margin-bottom: 30px;
 }
-.container{
-    color:var(--tekst-color)
+.container {
+    color: var(--tekst-color);
 
+    @media (min-width:768px) {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 .huizen-fav{
 margin-top: 25px;
