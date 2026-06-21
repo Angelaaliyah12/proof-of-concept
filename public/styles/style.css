@@ -112,7 +112,6 @@ margin: 0;
 }
 
 /* prijs sortering */
-
 .sort-wrapper {
     display: flex;
     flex-direction: column;
@@ -145,7 +144,6 @@ margin: 0;
 
 
 /* Huizen lijst*/
-
 ul{
     list-style: none;
     padding:0;
@@ -220,7 +218,6 @@ ul{
 
 
 /*detail sectionneeee*/
-
 .sticky{
     display:flex;
     gap: 15px;
@@ -258,6 +255,7 @@ font-size: larger;
     display:flex;
     gap: 15px;
 }
+
 /*opslaan knop + animatie*/ 
 .opslaan-knop {
     position: relative;
@@ -469,6 +467,31 @@ border-radius: 5px;
     }
 }
 
+/* icons onder main img*/
+.container-kijk-icon {
+    display: none;
+
+    @media (min-width:768px) {
+        display: flex;
+        justify-content: space-between;
+        fill: var(--tekst-color);
+        color: var(--tekst-color);
+        margin: 20px 55px 20px 55px;
+    }
+}
+.container-kijk-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.foto-icon-container,
+.plattegrond-container,
+.graden-container,
+.video-container,
+.media-container {
+    display: flex;
+    gap: 15px;
+}
 
 .straat-desk,
 .prijs-desk{
