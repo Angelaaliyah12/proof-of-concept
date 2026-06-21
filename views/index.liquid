@@ -19,14 +19,22 @@
     <div class="index-onderkant">
         <ul class="container-huizen">
 
+
             {% for huis in funda %}
 
             <li class="lijst-huizen">
                 <a href="/detail/{{ huis.id }}">
+                    {% if huis.poster_image %}
+
                     <img height="68" width="68" class="huis-img"
                         src="https://fdnd-agency.directus.app/assets/{{ huis.poster_image }}" alt="foto-huis">
+                    {% else %}
+                    <img alt="Tip: bewaar een huis" aria-hidden="true" class="huis-img-dummy" width="120" height="182"
+                        src="https://nuxt.fstatic.nl/134ef8a2b9a9b333/favorieten/_nuxt/favourites.Cc-ltJ0E.svg">
+                    {% endif %}
 
                 </a>
+
 
                 <p class="straat">{{ huis.street }} {{ huis.house_nr }}</p>
                 <p class="stad">{{ huis.postal_code }} {{ huis.city }}</p>
