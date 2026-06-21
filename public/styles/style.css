@@ -58,6 +58,7 @@ margin-right: 50px;}
 .acc-icon{
 height:25px;
 width: auto;
+fill: var(--header-icon-color);
 }
 .container-menu,
 .container-huis-icon,
