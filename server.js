@@ -136,7 +136,7 @@ app.get('/favorieten', async function (request, response) {
 	const status = request.query.status
 
   const favResponse = await fetch(
-    'https://fdnd-agency.directus.app/items/f_list/31?fields=houses.f_houses_id.*'
+		'https://fdnd-agency.directus.app/items/f_list/31?fields=houses.id,houses.f_houses_id.*'
   );
 
   const favResponseJson = await favResponse.json()

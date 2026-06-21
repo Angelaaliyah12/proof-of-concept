@@ -755,5 +755,11 @@ margin-top: 25px;
     fill: var(--tekst-color);
     flex-shrink: 0;
 }
-
+/* fade out effect bij verwidjeren*/
+.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
 /*footer sectioneeee*/
