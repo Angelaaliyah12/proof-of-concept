@@ -187,12 +187,19 @@ ul{
 
 .huis-img{
     width: clamp(15rem, -5.9524rem + 104.7619vw, 21.875rem);
-    height: auto ;
+    height: 180px ;
     object-fit: cover;
     display: block;
     border-radius: 10px;
     @media (min-width:768px){
         width: 240px;
+          transition: all .3s ease-in-out;
+
+        /*bron: https://css-tricks.com/snippets/css/scale-on-hover-with-webkit-transition/*/
+        &:hover {
+            transform: scale(1.05);
+
+        }
     }
 }
 .straat{
