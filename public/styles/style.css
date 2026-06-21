@@ -384,19 +384,23 @@ height: 40px;
 
 /*pop up*/
 .verwijderd-tekst,
-.succes-tekst{
-    position:fixed;
-    top:60px;
+.succes-tekst {
+    position: fixed;
+    top: 5px;
     right: 10px;
     background-color: var(--header-icon-color);
     border-radius: 5px;
-    padding:20px;
     z-index: 9999;
     border-left: 6px solid #1aa34a;
-    width: 350px;
-            @media (min-width: 375px){
-             width: clamp(15.625rem, 13.0352rem + 11.0497vw, 21.875rem);
-        }
+}
+.succes-tekst {
+    width: clamp(15.625rem, 11.3697rem + 21.2766vw, 25rem);
+    padding: 5px;
+}
+
+.verwijderd-tekst {
+    width: clamp(13.125rem, 9.1534rem + 19.8582vw, 21.875rem);
+    padding: clamp(0.9375rem, 0.512rem + 2.1277vw, 1.875rem);
 }
 
 /*sluitknop van popup*/
@@ -459,6 +463,7 @@ border-radius: 5px;
 .deel-icon,
 .opslaan-knop
 {
+        fill: var(--tekst-color);
     color:var(--tekst-color);
     background-color: var(--header-icon-color);
     border:none;
