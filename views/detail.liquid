@@ -311,8 +311,19 @@
 		</svg>
 		<span class="machine-tekst">Wat worden mijn maandlasten?</span>
 	</div>
-	<h2>Omschrijving</h2>
-	<p>{{ detail.description }}</p>
+
+	
+	{% comment %} bron: https://shopify.github.io/liquid/filters/truncate/ {% endcomment %}
+	<div class="tekst-details">
+		<h2>Omschrijving</h2>
+		<div class="omschr">
+			<p class="omschr-tekst">{{ detail.description | truncate: 250 }}</p>
+
+			<details class="omschrijving">
+<summary class="uitklap">Lees de volledige omschrijving</summary>
+				<p class="omschr-tekst">{{ detail.description }}</p>
+		</div>
+		</details>
 
 </main>
 {% include 'partials/foot.liquid' %}
