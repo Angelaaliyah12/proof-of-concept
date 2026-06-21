@@ -117,9 +117,10 @@ app.get('/detail/:id', async function(request, response){
 
 
 app.get('/favorieten', async function (request, response) {
+	const status = request.query.status
 
   const favResponse = await fetch(
-    'https://fdnd-agency.directus.app/items/f_list/17?fields=houses.f_houses_id.*'
+    'https://fdnd-agency.directus.app/items/f_list/31?fields=houses.f_houses_id.*'
   );
 
   const favResponseJson = await favResponse.json()
@@ -130,6 +131,7 @@ app.get('/favorieten', async function (request, response) {
 
   response.render('favorieten.liquid', {
     favorieten: favResponseJson.data.houses,
+	status: status
   });
 
 });
@@ -142,7 +144,7 @@ app.post('/favorieten', async function (request, response) {
 
   // dit is mijn lijstid17 dezelijsthaal ik dusop
   const favResponse = await fetch(
-    'https://fdnd-agency.directus.app/items/f_list/17?fields=*.*'
+    'https://fdnd-agency.directus.app/items/f_list/31?fields=*.*'
   );
 
   const favJSON = await favResponse.json();
@@ -155,7 +157,7 @@ app.post('/favorieten', async function (request, response) {
   if (favHuis) {
 
     await fetch( //de delete patchaaaa
-      'https://fdnd-agency.directus.app/items/f_list/17',
+      'https://fdnd-agency.directus.app/items/f_list/31',
       {
         method: 'PATCH',
         headers: {
@@ -174,7 +176,7 @@ app.post('/favorieten', async function (request, response) {
   } else {
 
     await fetch( 
-      'https://fdnd-agency.directus.app/items/f_list/17',
+      'https://fdnd-agency.directus.app/items/f_list/31',
       {
         method: 'PATCH',
         headers: {
@@ -194,7 +196,27 @@ app.post('/favorieten', async function (request, response) {
   response.redirect('/detail/' + houseId + '?status=succes');
 });
 
+app.post('/verwijder-favoriet', async function (request, response) {
 
+	const favhuisId = request.body.favhuisId;
+
+	await fetch(
+		'https://fdnd-agency.directus.app/items/f_list/31',
+		{
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				houses: {
+					delete: [favhuisId]
+				}
+			})
+		}
+	);
+
+	response.redirect('/favorieten' + '?status=verwijderd');
+});
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
