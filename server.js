@@ -44,6 +44,46 @@ fundaResponseJson.data.forEach(huis => {
     })
 });
 
+
+app.get('/prijs-laag-hoog', async function (request, response) {
+
+	const params = {
+		'sort': 'price',
+		'fields': '*'
+	}
+
+	const houseResponse = await fetch(
+		'https://fdnd-agency.directus.app/items/f_houses/?' +
+		new URLSearchParams(params)
+	)
+
+	const houseResponseJSON = await houseResponse.json()
+
+	response.render('index.liquid', {
+		funda: houseResponseJSON.data
+	})
+})
+
+app.get('/prijs-hoog-laag', async function (request, response) {
+
+	const params = {
+		'sort': '-price',
+		'fields': '*'
+	}
+
+	const houseResponse = await fetch(
+		'https://fdnd-agency.directus.app/items/f_houses/?' +
+		new URLSearchParams(params)
+	)
+
+	const houseResponseJSON = await houseResponse.json()
+
+	response.render('index.liquid', {
+		funda: houseResponseJSON.data
+	})
+})
+
+
 app.get('/detail/:id', async function(request, response){
     const id= request.params.id
     const status = request.query.status 
