@@ -10,6 +10,10 @@
 body{
     margin:0;
 }
+
+button{
+    cursor: pointer;
+}
 /*header sectionnnneeeeeee */
 header{
     padding:20px;
@@ -426,6 +430,45 @@ border-radius: 5px;
     fill: #187428;
 }
 
+/*main img*/
+.container-img{
+     position: relative;
+    z-index: 2;
+       @media (min-width:768px) {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+.detail-img{
+    width:100%;
+    height: auto;
+    display: block;
+    @media (min-width: 768px) {
+        border-radius: 5px;
+    }
+}
+/*deel en like knop op img*/
+.container-knoppen{
+    position: absolute;
+    top: 10px;
+    right:10px;
+    display:flex;
+    gap:8px;
+    z-index:5;
+}
+
+.deel-icon,
+.opslaan-knop
+{
+    color:var(--tekst-color);
+    background-color: var(--header-icon-color);
+    border:none;
+    border-radius: 5px;
+    &:hover{
+        background-color: #E5F6FF;
+    }
+}
+
 
 .straat-desk,
 .prijs-desk{
@@ -442,51 +485,6 @@ font-size: larger;
         display:flex;
         color: var(--tekst-color)
     }
-}
-.container-img{
-     position: relative;
-    display: inline-block; /* of block */
-    z-index: 2;
-}
-.detail-img{
-    width:100%;
-    height: auto;
-}
-.container-knoppen{
-    position: absolute;
-    top: 10px;
-    right:10px;
-    display:flex;
-    gap:5px;
-}
-
-
-
-.deel-icon,
-.opslaan-knop
-{
-    color:var(--tekst-color);
-    background-color: var(--header-icon-color);
-    border:none;
-    border-radius: 5px;
-    &:hover{
-        background-color: #E5F6FF;
-    }
-}
-
-button{
-    cursor: pointer;
-}
-
-.opslaan-knop {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-width:40px;
-height: 40px;
-        fill:var(--tekst-color);
-
 }
 
 
