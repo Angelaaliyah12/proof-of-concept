@@ -2,7 +2,7 @@ document.querySelectorAll('.verwijder-fav-form').forEach(form => {
     form.addEventListener('submit', function (event) { //Als iemand form klikt//
         event.preventDefault(); //stopt ff met reloaden bron: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault// 
 
-        const li = form.closest('li'); //pak de lijst waar deze knop in zit//
+        const li = form.closest('li'); //pak de lijst waar deze knop in zit bron: https://developer.mozilla.org/en-US/docs/Web/API/Element/closest//
 
         li.classList.add('fade-out');  //voeg class toe aan deze list
 
