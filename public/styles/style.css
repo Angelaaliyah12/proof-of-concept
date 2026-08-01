@@ -733,6 +733,7 @@ margin-top: 25px;
 
 /*notitie knopje in kaart*/
 .container-note {
+    text-decoration: none;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -763,4 +764,51 @@ margin-top: 25px;
     transition: all 0.3s ease;
     pointer-events: none;
 }
+/*popup notitie*/
+
+/* bron: https://www.youtube.com/watch?v=DV5vGcIq9c0 */
+
+
+
+.popup{
+    position: fixed;
+    width:100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    opacity: 0; 
+    visibility: hidden;
+    bottom: 0;
+    right:0;
+    transition: 0.65s ease-in-out;
+} 
+.popup_inner{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 670px;
+    height: 470px;
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    bottom: -100vw;
+    right: -100vh;
+}
+
+.popup:target{
+    opacity: 1;
+    visibility: visible;
+}
+.popup:target .popup_inner{
+    bottom:0;
+    right: 0;
+}
+
+.popup:target .popup_inner .close_popup{
+    top: -0.4rem;
+    right: -0.4rem;
+} 
 /*footer sectioneeee*/
