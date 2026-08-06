@@ -674,6 +674,7 @@ margin-top: 25px;
     object-fit: cover;
     display: block;
 }
+
 .delen-icon {
     position: absolute;
     top: 10px;
@@ -724,7 +725,6 @@ margin-top: 25px;
     justify-content: center;
     align-items: center;
 }
-/**/
 
 .makelaar {
     color: var(--tekst-color)
@@ -756,6 +756,10 @@ margin-top: 25px;
 .plus-icon {
     fill: var(--tekst-color);
     flex-shrink: 0;
+}
+.button-fav {
+  text-decoration: none;
+  color: var(--tekst-color);
 }
 /* fade out effect bij verwidjeren*/
 .fade-out {
