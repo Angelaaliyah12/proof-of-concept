@@ -166,7 +166,7 @@ ul{
         grid-template-columns: repeat(4, 250px);
         gap: 30px;
     }
-}
+} 
 
 /* scroll animatie */
 .lijst-huizen {
@@ -616,6 +616,12 @@ border-radius: 5px;
     margin-bottom: 30px;
 }
 /* Fav huizen kaarten*/
+.wrapper-list-note{
+display:flex;
+flex-direction: column;
+}
+
+
 .container {
     color: var(--tekst-color);
 
@@ -624,8 +630,8 @@ border-radius: 5px;
         justify-content: space-between;
     }
 }
+
 .huizen-fav{
-margin-top: 25px;
     display: grid;
     grid-template-columns: clamp(15.625rem, -0.248rem + 79.3651vw, 25rem);
     gap: 25px;
@@ -645,17 +651,19 @@ margin-top: 25px;
         grid-template-columns: repeat(4, 250px);
         gap: 30px;
     }
-}
+} 
 
 .huizen-lijst-fav {
+    margin-top: 25px;
     position: relative;
-    margin-bottom: 50px;
     transition: all 0.3s ease;
     background: white;
-    border-radius: 16px;
+    border-top-left-radius: 16px;
+    border-top-right-radius:16px;
     border: solid 1px var(--border-color);
     overflow: hidden;
     display: flex;
+    border-bottom: none;
     flex-direction: column;
           transition: transform 0.3s ease;
 &:hover{
@@ -733,6 +741,7 @@ margin-top: 25px;
 
 /*notitie knopje in kaart*/
 .container-note {
+    margin-bottom: 50px;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -740,16 +749,20 @@ margin-top: 25px;
 
     background: none;
     padding: 10px 0;
-    border: none;
+    border: solid 1px var(--border-color);
+    border-top: none;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     width: 100%;
     text-align: left;
-    border-top: solid 1px var(--border-color);
 
     cursor: pointer;
     color: var(--tekst-color);
 
     &:hover {
         background-color: #E1F2FB;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius:16px;
     }
 }
 
@@ -768,11 +781,12 @@ margin-top: 25px;
     transition: all 0.3s ease;
     pointer-events: none;
 }
+
+
+
 /*popup notitie*/
 
 /* bron: https://www.youtube.com/watch?v=DV5vGcIq9c0 */
-
-
 
 .popup{
     position: fixed;
