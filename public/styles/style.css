@@ -673,8 +673,10 @@ flex-direction: column;
 }
 }
 
+
 .huizen-lijst-fav p {
     margin-left: 10px;
+    font-family: "Proxima Nova", "Proxima Nova fallback", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .img-fav {
@@ -784,7 +786,6 @@ flex-direction: column;
 }
 
 
-
 /*popup notitie*/
 
 /* bron: https://www.youtube.com/watch?v=DV5vGcIq9c0 */
@@ -826,8 +827,23 @@ flex-direction: column;
     right: 0;
 }
 
-.popup:target .popup_inner .close_popup{
-    top: -0.4rem;
-    right: -0.4rem;
-} 
+
+.close_popup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 20px;
+    top: 20px;
+    text-decoration: none;
+    color: black;
+    &:hover{
+        background-color: var(--border-color);
+        border-radius: 5px;
+        font-size: 20px;
+    }
+}
+
 /*footer sectioneeee*/
