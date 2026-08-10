@@ -152,25 +152,33 @@
 			
 			<div class="popup" id="popup_{{huis.f_houses_id.id}}">
 				<div class="popup_inner">
-					<p>{{ huis.f_houses_id.street }} {{ huis.f_houses_id.house_nr }}</p>
+					<p class="straat_p">{{ huis.f_houses_id.street }} {{ huis.f_houses_id.house_nr }}</p>
+				<div class="stad">
 					<p>{{ huis.f_houses_id.city }}</p>
 					<span>|</span>
-					<p> Bekijk alle details</p>
-					<p class="prijs">{{ huis.f_houses_id.price }}k.k.</p>
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="presentation"
+					<p class="detail_f"> Bekijk alle details</p>
+				</div>
+
+					<p class="prijs">€ {{ huis.f_houses_id.price }}k.k.</p>
+					<div class="contact">
+					<svg class="svg_n" xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="presentation"
 						viewBox="0 0 48 48" class="mr-2 shrink-0">
 						<path
 							d="M42.5 10h-37A1.5 1.5 0 004 11.5v25A1.5 1.5 0 005.5 38h37a1.5 1.5 0 001.5-1.5v-25a1.5 1.5 0 00-1.5-1.5zM23.12 26.22a1.5 1.5 0 001.76 0L41 14.57V35H7V14.57zM9.95 13h28.1L24 23.15z">
 						</path>
 					</svg>
 					<p> Neem contact op</p>
-					<p>Mijn notities</p>
+					</div>
+<span class="line"></span>
+					<p class="not-p">Mijn notities</p>
 					<form>
-						<textarea class="notitie-veld" name="note" maxlength="500"
+						<textarea class="notitie_veld" name="note" maxlength="500"
 							placeholder="Voeg hier je persoonlijke notitie toe...">
 </textarea>
-						<button>verwijder</button>
-						<button>opslaan</button>
+<div class="knoppen">
+						<button class="vw_knop">verwijder</button>
+						<button class="opslaan_knop">opslaan</button>
+</div>
 					</form>
 					<a href="#" class="close_popup">X</a>
 
