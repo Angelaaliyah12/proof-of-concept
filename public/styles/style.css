@@ -654,6 +654,7 @@ flex-direction: column;
 } 
 
 .huizen-lijst-fav {
+    height: 380px;
     margin-top: 25px;
     position: relative;
     transition: all 0.3s ease;
