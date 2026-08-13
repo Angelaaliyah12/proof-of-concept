@@ -171,13 +171,15 @@
 					</div>
 <span class="line"></span>
 					<p class="not-p">Mijn notities</p>
-					<form>
-						<textarea class="notitie_veld" name="note" maxlength="500"
+
+					<form action="/notitie" method="POST">
+					<input type="hidden"  name="houseId"  value="{{huis.f_houses_id.id}}">
+						<textarea class="notitie_veld" name="notitie" maxlength="500"
 							placeholder="Voeg hier je persoonlijke notitie toe...">
 </textarea>
 <div class="knoppen">
 						<button class="vw_knop">verwijder</button>
-						<button class="opslaan_knop">opslaan</button>
+						<button type="submit" class="opslaan_knop">opslaan</button>
 </div>
 					</form>
 					<a href="#" class="close_popup">X</a>
