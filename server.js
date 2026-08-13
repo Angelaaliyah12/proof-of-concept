@@ -235,6 +235,35 @@ app.post('/verwijder-favoriet', async function (request, response) {
 	response.redirect('/favorieten' + '?status=verwijderd');
 });
 
+
+app.post('/notitie', async function (request, response) {
+
+    const houseId = request.body.houseId;
+    const notitie = request.body.notitie;
+
+    // console.log('houseId:', houseId);
+    // console.log('notitie:', notitie);
+
+    await fetch(
+        'https://fdnd-agency.directus.app/items/f_notes',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                house: houseId,
+                note: notitie
+            })
+        }
+    );
+
+    response.redirect('/favorieten?status=opgeslagen');
+    // console.log('notitie')
+});
+
+
+
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
 app.set("port", process.env.PORT || 8001);
