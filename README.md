@@ -68,6 +68,33 @@ https://github.com/user-attachments/assets/cabec705-602c-4ca2-a8bf-16d5c9d08bcb
 
 https://github.com/user-attachments/assets/cbc833c7-5533-41a8-9b95-559ee5e9d53d
 
+# Notitie 
+- Bij dit onderdeel kan de gebruiker een notitie toevoegen en verwijderen aan zijn favorieten huizen.
+- zie figma: https://www.figma.com/design/GLEzicwvui25VF0IkzHQB3/Funda?node-id=0-1&p=f&t=cQnbAN1AY0ERwPq8-0 
+
+<img width="229" height="44" alt="image" src="https://github.com/user-attachments/assets/e3e75caf-f711-4373-b0fe-314452ce9286" /> <br>
+
+<img width="257" height="351" alt="image" src="https://github.com/user-attachments/assets/a2f1dd89-cfc6-4f46-8a58-0c926a78636a" />
+
+## Notitie Desktop
+<img width="485" height="206" alt="image" src="https://github.com/user-attachments/assets/4390538d-c6ba-4f48-93e3-3c718c29842d" />
+
+## Notitie Mobile 
+
+<img width="95" height="177" alt="image" src="https://github.com/user-attachments/assets/65293ce3-ca04-480a-8c4c-19e3684a0e75" />
+
+## Notitie knop staten:
+### Normal state
+<img width="77" height="138" alt="image" src="https://github.com/user-attachments/assets/fa92c838-e12f-4ee1-9b76-e5317e54f037" />
+
+### Hover state
+<img width="181" height="147" alt="image" src="https://github.com/user-attachments/assets/6a0a481a-41f3-45af-ba5f-384e33dd011a" />
+
+### Loading state
+<img width="108" height="130" alt="image" src="https://github.com/user-attachments/assets/4536872b-071e-439d-b93b-cb3e1eb58652" />
+
+### Succes state
+<img width="89" height="128" alt="image" src="https://github.com/user-attachments/assets/78244ee3-0180-4431-966f-46ca0dd827dd" />
 
 ## Bronnen
 
