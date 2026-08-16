@@ -238,26 +238,66 @@ app.post('/verwijder-favoriet', async function (request, response) {
 
 app.post('/notitie', async function (request, response) {
 
+  //haalt id van huis op (de notitie hoort dan bij die id)
     const houseId = request.body.houseId;
+    // haalt de notitie zelf op dus wat de gebruiker schrijft
     const notitie = request.body.notitie;
 
     // console.log('houseId:', houseId);
     // console.log('notitie:', notitie);
 
+    //haalt de notitie van de specifieke huis id
+    const noteResponse = await fetch (
+      'https://fdnd-agency.directus.app/items/f_notes?filter[house][_eq]=' + houseId
+    );
+    
+    //de response op de url krijg je terug in json
+    const noteJson = await noteResponse.json();
+
+    //kijk je of er notitie al is
+    if (noteJson.data.length > 0){
+
+      //als al notitie bestaat dan pak de note id van het huis en maak dat noteId
+      const noteId = noteJson.data[0].id;
+
+      //ga naar de notitie met die specifieke notitie id
+      await fetch(
+        'https://fdnd-agency.directus.app/items/f_notes/' + noteId,
+        {
+          //patch> pas de bestaande notitie aan
+          method: 'PATCH',
+          //zegt tegen directus dat de gegevens die ik stuur is json
+          headers: {
+            'Content-type' : 'application/json'
+          },
+          //stuur de nieuwe tekst als json naar directus
+          body: JSON.stringify({
+            note: notitie
+          })
+        }
+      );
+
+      //als er nog geen notitie is
+    } else{
+
+      //ga naar de notitie 
     await fetch(
         'https://fdnd-agency.directus.app/items/f_notes',
         {
+          //post> maak iets niews aan
             method: 'POST',
+            //hoe je data verstuurd naar directus dus hier in json formaat
             headers: {
                 'Content-Type': 'application/json'
             },
+            // stuur van de body de house id en de notitie naar directus
             body: JSON.stringify({
                 house: houseId,
                 note: notitie
             })
         }
     );
-
+  }
     response.redirect('/favorieten?status=opgeslagen');
     // console.log('notitie')
 });
