@@ -139,11 +139,12 @@
 
 <a href="#popup_{{ huis.f_houses_id.id }}" class="container-note">
 					
-
+{% if huis.f_houses_id.notes %}
 			{% for note in huis.f_houses_id.notes %}
     <span>Notities: {{ note.note }}</span>
 {% endfor %}
 
+{% else %}
 
 					<svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
 					<path
@@ -152,6 +153,7 @@
 				</svg>
 
 				<span class="plus-tekst">Notities toevoegen</span>
+{% endif %}
 			</a>
  </div>
 
