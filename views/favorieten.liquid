@@ -139,7 +139,11 @@
 
 <a href="#popup_{{ huis.f_houses_id.id }}" class="container-note">
 					
-{% if huis.f_houses_id.notes %}
+{% comment %}
+ 	bron: https://learn.microsoft.com/en-us/power-pages/configure/liquid/liquid-types 
+{% endcomment %}
+
+{% if huis.f_houses_id.notes.size > 0   %}
 			{% for note in huis.f_houses_id.notes %}
     <span>Notities: {{ note.note }}</span>
 {% endfor %}
