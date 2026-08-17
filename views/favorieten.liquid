@@ -191,7 +191,10 @@
 							placeholder="Voeg hier je persoonlijke notitie toe...">
 </textarea>
 <div class="knoppen">
-						<button class="vw_knop">verwijder</button>
+	{% comment %} 
+bron:https://alvinljt.medium.com/how-to-create-an-html-form-with-multiple-and-different-form-actions-using-formaction-attribute-d530bbd2cab6 
+{% endcomment %}
+						<button type="submit" formaction="/verwijder-notitie" class="vw_knop">verwijder</button>
 						<button type="submit" class="opslaan_knop">opslaan</button>
 </div>
 					</form>
