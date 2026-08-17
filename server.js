@@ -302,7 +302,26 @@ app.post('/notitie', async function (request, response) {
     // console.log('notitie')
 });
 
+app.post('/verwijder-notitie', async function (request, response){
+  const houseId = request.body.houseId;
 
+  const noteResponse = await fetch (
+    'https://fdnd-agency.directus.app/items/f_notes?filter[house][_eq]=' + houseId
+  );
+
+  const noteJson = await noteResponse.json();
+  if (noteJson.data.length > 0){
+    const noteId = noteJson.data[0].id
+
+    await fetch(
+     'https://fdnd-agency.directus.app/items/f_notes/' + noteId,
+      {
+        method: 'DELETE'
+      }
+    )
+  }
+  response.redirect('/favorieten')
+})
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
