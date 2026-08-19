@@ -188,8 +188,8 @@
 					<form action="/notitie" method="POST">
 					<input type="hidden"  name="houseId"  value="{{huis.f_houses_id.id}}">
 						<textarea class="notitie_veld" name="notitie" maxlength="500"
-							placeholder="Voeg hier je persoonlijke notitie toe...">
-</textarea>
+							placeholder="Voeg hier je persoonlijke notitie toe..."> {% for note in huis.f_houses_id.notes %}{{ note.note }}{% endfor %}
+							</textarea>
 <div class="knoppen">
 	{% comment %} 
 bron:https://alvinljt.medium.com/how-to-create-an-html-form-with-multiple-and-different-form-actions-using-formaction-attribute-d530bbd2cab6 
