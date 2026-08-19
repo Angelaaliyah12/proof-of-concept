@@ -47,7 +47,7 @@
 					</path>
 				</svg>
 				<span class="bell-tekst">Beheer meldingen</span>
-</div>
+			</div>
 
 			<div class="container-beschikbaar">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 48 48">
@@ -58,151 +58,156 @@
 				</svg>
 				<span class="besch-tekst">Beschikbaarheid</span>
 			</div>
-	</a>
+		</a>
 
-	{% comment %} LIJST FAV {% endcomment %}
-	 <div class="wrapper-list-note">
+		{% comment %} LIJST FAV {% endcomment %}
+		<div class="wrapper-list-note">
 
-	<ul class="huizen-fav">
-		{% for huis in favorieten %}
-		<div class="lijst-cont">
+			<ul class="huizen-fav">
+				{% for huis in favorieten %}
+				<div class="lijst-cont">
 
-		<li class="huizen-lijst-fav">
+					<li class="huizen-lijst-fav">
 
-			<a href="/detail/{{ huis.f_houses_id.id }}">
-				<img class="img-fav" src="https://fdnd-agency.directus.app/assets/{{ huis.f_houses_id.poster_image }}"
-					alt="nog invullen" width="284" height="165" loading="lazy">
-			</a>
-			<svg class="delen-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
-				<path
-					d="M36 31.3a6 6 0 00-4.81 2.42l-13.51-7.8a5.92 5.92 0 00.08-3.58l13.7-7.91a6 6 0 10-1.33-2.69l-13.89 8a6 6 0 10-.2 8.68l14 8.09A6 6 0 1036 31.3zm0-23.78a3 3 0 11-3 3 3 3 0 013-3zM12 27a3 3 0 113-3 3 3 0 01-3 3zm24 13.3a3 3 0 113-3 3 3 0 01-3 3z">
-				</path>
-			</svg>
-			<div class="container-straat-hart">
-				<div class="straat-container">
-					<p class="straat-fav">{{ huis.f_houses_id.street }} {{ huis.f_houses_id.house_nr}}</p>
-				</div>
-				<div class="verwijder-container-f">
-					<form class="verwijder-fav-form" method="POST" action="/verwijder-favoriet">
-						<input type="hidden" name="favhuisId" value="{{ huis.id }}">
-						<button type="submit" class="verwijder-knop">
-							<svg class="verwijder-f" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+						<a href="/detail/{{ huis.f_houses_id.id }}">
+							<img class="img-fav"
+								src="https://fdnd-agency.directus.app/assets/{{ huis.f_houses_id.poster_image }}"
+								alt="huis {{ huis.f_houses_id.street }} {{ huis.f_houses_id.house_nr }}" width="284" height="165" loading="lazy">
+						</a>
+						<svg class="delen-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+							viewBox="0 0 48 48">
+							<path
+								d="M36 31.3a6 6 0 00-4.81 2.42l-13.51-7.8a5.92 5.92 0 00.08-3.58l13.7-7.91a6 6 0 10-1.33-2.69l-13.89 8a6 6 0 10-.2 8.68l14 8.09A6 6 0 1036 31.3zm0-23.78a3 3 0 11-3 3 3 3 0 013-3zM12 27a3 3 0 113-3 3 3 0 01-3 3zm24 13.3a3 3 0 113-3 3 3 0 01-3 3z">
+							</path>
+						</svg>
+						<div class="container-straat-hart">
+							<div class="straat-container">
+								<p class="straat-fav">{{ huis.f_houses_id.street }} {{ huis.f_houses_id.house_nr}}</p>
+							</div>
+							<div class="verwijder-container-f">
+								<form class="verwijder-fav-form" method="POST" action="/verwijder-favoriet">
+									<input type="hidden" name="favhuisId" value="{{ huis.id }}">
+									<button type="submit" class="verwijder-knop">
+										<svg class="verwijder-f" xmlns="http://www.w3.org/2000/svg" width="24"
+											height="24" viewBox="0 0 48 48">
+											<path
+												d="M42 17a10 10 0 00-18-6 10 10 0 00-18 6c0 15 16 24 18 24s18-9 18-24z">
+											</path>
+										</svg>
+									</button>
+								</form>
+							</div>
+						</div>
+						<p class="stad-f">{{ huis.f_houses_id.postal_code}} {{ huis.f_houses_id.city }}</p>
+						<p class="prijs-fav">€{{ huis.f_houses_id.price}}k.k.</p>
+
+						<div class="woning-icons">
+							<div class="container-m2">
+								<svg class="svg-m2" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+									viewBox="0 0 48 48">
+									<path
+										d="M38.5 32.25v-16.5a5 5 0 10-6.25-6.25h-16.5a5 5 0 10-6.25 6.25v16.5a5 5 0 106.25 6.25h16.5a5 5 0 106.25-6.25zm-6.25 3.25h-16.5a5 5 0 00-3.25-3.25v-16.5a5 5 0 003.25-3.25h16.5a5 5 0 003.25 3.25v16.5a5 5 0 00-3.25 3.25zM37 9a2 2 0 11-2 2 2 2 0 012-2zM11 9a2 2 0 11-2 2 2 2 0 012-2zm0 30a2 2 0 112-2 2 2 0 01-2 2zm26 0a2 2 0 112-2 2 2 0 01-2 2z">
+									</path>
+								</svg>
+								<span class="svg-m2-tekst">{{ huis.f_houses_id.m2}}m²</span>
+							</div>
+
+							<div class="container-garden">
+								<svg class="svg-m2-garden" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+									viewBox="0 0 48 48">
+									<path
+										d="M43 5.5A1.5 1.5 0 0041.5 4h-35A1.5 1.5 0 005 5.5v37A1.5 1.5 0 006.5 44h35a1.5 1.5 0 001.5-1.5zm-35 9h13v5a1.5 1.5 0 001.5 1.5H30v20H8zm25 5a1.5 1.5 0 00-1.5-1.5H24v-5a1.5 1.5 0 00-1.5-1.5H8V7h32v34h-7z">
+									</path>
+								</svg>
+								<span class="svg-garden-tekst">{{ huis.f_houses_id.m2_garden}}m²</span>
+							</div>
+
+							<div class="container-kamers">
+								<svg class="svg-kamers" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+									viewBox="0 0 48 48">
+									<path
+										d="M11 20l-3.999 5.999h33.998L37 20h3l3.999 5.999L44 26v9.5a1.5 1.5 0 01-1.5 1.5H39v1.5a1.5 1.5 0 01-3 0V37H12v1.5a1.5 1.5 0 01-3 0V37H5.5A1.5 1.5 0 014 35.5V26l.001-.001L8 20h3zm30 9H7v5h34v-5zM38.5 8A1.5 1.5 0 0140 9.5V20l-9-.001V21.5a1.5 1.5 0 01-1.5 1.5h-11a1.5 1.5 0 01-1.5-1.5v-1.501L8 20V9.5A1.5 1.5 0 019.5 8h29zM28 17h-8v3h8v-3zm9-6H11v5.999h6V15.5a1.5 1.5 0 011.5-1.5h11a1.5 1.5 0 011.5 1.5v1.499h6V11z">
+									</path>
+								</svg>
+								<span class="svg-kamers-tekst">{{ huis.f_houses_id.rooms}}</span>
+							</div>
+
+						</div>
+						<p class="makelaar">{{ huis.f_houses_id.agent}}</p>
+
+					</li>
+
+					{% comment %} NOTITIE POP UP {% endcomment %}
+					<div class="popup-container">
+
+						<a href="#popup_{{ huis.f_houses_id.id }}" class="container-note">
+
+							{% comment %}
+							bron: https://learn.microsoft.com/en-us/power-pages/configure/liquid/liquid-types
+							{% endcomment %}
+
+							{% if huis.f_houses_id.notes.size > 0 %}
+							{% for note in huis.f_houses_id.notes %}
+							<span>Notities: {{ note.note }}</span>
+							{% endfor %}
+
+							{% else %}
+
+							<svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 								viewBox="0 0 48 48">
-								<path d="M42 17a10 10 0 00-18-6 10 10 0 00-18 6c0 15 16 24 18 24s18-9 18-24z">
+								<path
+									d="M36.5 22.5h-11v-11A1.5 1.5 0 0024 10a1.5 1.5 0 00-1.5 1.5v11h-11a1.5 1.5 0 000 3h11v11A1.5 1.5 0 0024 38a1.5 1.5 0 001.5-1.5v-11h11a1.5 1.5 0 000-3z">
 								</path>
 							</svg>
-						</button>
-					</form>
-				</div>
-			</div>
-			<p class="stad-f">{{ huis.f_houses_id.postal_code}} {{ huis.f_houses_id.city }}</p>
-			<p class="prijs-fav">€{{ huis.f_houses_id.price}}k.k.</p>
 
-			<div class="woning-icons">
-				<div class="container-m2">
-					<svg class="svg-m2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
-						<path
-							d="M38.5 32.25v-16.5a5 5 0 10-6.25-6.25h-16.5a5 5 0 10-6.25 6.25v16.5a5 5 0 106.25 6.25h16.5a5 5 0 106.25-6.25zm-6.25 3.25h-16.5a5 5 0 00-3.25-3.25v-16.5a5 5 0 003.25-3.25h16.5a5 5 0 003.25 3.25v16.5a5 5 0 00-3.25 3.25zM37 9a2 2 0 11-2 2 2 2 0 012-2zM11 9a2 2 0 11-2 2 2 2 0 012-2zm0 30a2 2 0 112-2 2 2 0 01-2 2zm26 0a2 2 0 112-2 2 2 0 01-2 2z">
-						</path>
-					</svg>
-					<span class="svg-m2-tekst">{{ huis.f_houses_id.m2}}m²</span>
+							<span class="plus-tekst">Notities toevoegen</span>
+							{% endif %}
+						</a>
+					</div>
+
 				</div>
 
-				<div class="container-garden">
-					<svg class="svg-m2-garden" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-						viewBox="0 0 48 48">
-						<path
-							d="M43 5.5A1.5 1.5 0 0041.5 4h-35A1.5 1.5 0 005 5.5v37A1.5 1.5 0 006.5 44h35a1.5 1.5 0 001.5-1.5zm-35 9h13v5a1.5 1.5 0 001.5 1.5H30v20H8zm25 5a1.5 1.5 0 00-1.5-1.5H24v-5a1.5 1.5 0 00-1.5-1.5H8V7h32v34h-7z">
-						</path>
-					</svg>
-					<span class="svg-garden-tekst">{{ huis.f_houses_id.m2_garden}}m²</span>
-				</div>
+				<div class="popup" id="popup_{{huis.f_houses_id.id}}">
+					<div class="popup_inner">
+						<p class="straat_p">{{ huis.f_houses_id.street }} {{ huis.f_houses_id.house_nr }}</p>
+						<div class="stad">
+							<p>{{ huis.f_houses_id.city }}</p>
+							<span>|</span>
+							<a href="#WONTDO" class="detail_f"> Bekijk alle details</a>
+						</div>
 
-				<div class="container-kamers">
-					<svg class="svg-kamers" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-						viewBox="0 0 48 48">
-						<path
-							d="M11 20l-3.999 5.999h33.998L37 20h3l3.999 5.999L44 26v9.5a1.5 1.5 0 01-1.5 1.5H39v1.5a1.5 1.5 0 01-3 0V37H12v1.5a1.5 1.5 0 01-3 0V37H5.5A1.5 1.5 0 014 35.5V26l.001-.001L8 20h3zm30 9H7v5h34v-5zM38.5 8A1.5 1.5 0 0140 9.5V20l-9-.001V21.5a1.5 1.5 0 01-1.5 1.5h-11a1.5 1.5 0 01-1.5-1.5v-1.501L8 20V9.5A1.5 1.5 0 019.5 8h29zM28 17h-8v3h8v-3zm9-6H11v5.999h6V15.5a1.5 1.5 0 011.5-1.5h11a1.5 1.5 0 011.5 1.5v1.499h6V11z">
-						</path>
-					</svg>
-					<span class="svg-kamers-tekst">{{ huis.f_houses_id.rooms}}</span>
-				</div>
+						<p class="prijs">€ {{ huis.f_houses_id.price }}k.k.</p>
+						<a href="#WONTDO" class="contact">
+							<svg class="svg_n" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+								role="presentation" viewBox="0 0 48 48" class="mr-2 shrink-0">
+								<path
+									d="M42.5 10h-37A1.5 1.5 0 004 11.5v25A1.5 1.5 0 005.5 38h37a1.5 1.5 0 001.5-1.5v-25a1.5 1.5 0 00-1.5-1.5zM23.12 26.22a1.5 1.5 0 001.76 0L41 14.57V35H7V14.57zM9.95 13h28.1L24 23.15z">
+								</path>
+							</svg>
+							<p> Neem contact op</p>
+						</a>
+						<span class="line"></span>
+						<p class="not-p">Mijn notities</p>
 
-			</div>
-			<p class="makelaar">{{ huis.f_houses_id.agent}}</p>
-
-		</li>
-
-{% comment %} NOTITIE POP UP  {% endcomment %}
- <div class="popup-container">
-
-<a href="#popup_{{ huis.f_houses_id.id }}" class="container-note">
-					
-{% comment %}
- 	bron: https://learn.microsoft.com/en-us/power-pages/configure/liquid/liquid-types 
-{% endcomment %}
-
-{% if huis.f_houses_id.notes.size > 0   %}
-			{% for note in huis.f_houses_id.notes %}
-    <span>Notities: {{ note.note }}</span>
-{% endfor %}
-
-{% else %}
-
-					<svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
-					<path
-						d="M36.5 22.5h-11v-11A1.5 1.5 0 0024 10a1.5 1.5 0 00-1.5 1.5v11h-11a1.5 1.5 0 000 3h11v11A1.5 1.5 0 0024 38a1.5 1.5 0 001.5-1.5v-11h11a1.5 1.5 0 000-3z">
-					</path>
-				</svg>
-
-				<span class="plus-tekst">Notities toevoegen</span>
-{% endif %}
-			</a>
- </div>
-
- </div>
-			
-			<div class="popup" id="popup_{{huis.f_houses_id.id}}">
-				<div class="popup_inner">
-					<p class="straat_p">{{ huis.f_houses_id.street }} {{ huis.f_houses_id.house_nr }}</p>
-				<div class="stad">
-					<p>{{ huis.f_houses_id.city }}</p>
-					<span>|</span>
-					 <a href="#WONTDO" class="detail_f"> Bekijk alle details</a>
-				</div>
-
-					<p class="prijs">€ {{ huis.f_houses_id.price }}k.k.</p>
-					<a href="#WONTDO" class="contact">
-					<svg class="svg_n" xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="presentation"
-						viewBox="0 0 48 48" class="mr-2 shrink-0">
-						<path
-							d="M42.5 10h-37A1.5 1.5 0 004 11.5v25A1.5 1.5 0 005.5 38h37a1.5 1.5 0 001.5-1.5v-25a1.5 1.5 0 00-1.5-1.5zM23.12 26.22a1.5 1.5 0 001.76 0L41 14.57V35H7V14.57zM9.95 13h28.1L24 23.15z">
-						</path>
-					</svg>
-					<p> Neem contact op</p>
-					</a>
-<span class="line"></span>
-					<p class="not-p">Mijn notities</p>
-
-					<form action="/notitie" method="POST">
-					<input type="hidden"  name="houseId"  value="{{huis.f_houses_id.id}}">
-						<textarea class="notitie_veld" name="notitie" maxlength="500"
-							placeholder="Voeg hier je persoonlijke notitie toe..."> {% for note in huis.f_houses_id.notes %}{{ note.note }}{% endfor %}
+						<form action="/notitie" method="POST">
+							<input type="hidden" name="houseId" value="{{huis.f_houses_id.id}}">
+							<textarea class="notitie_veld" name="notitie" maxlength="500"
+								placeholder="Voeg hier je persoonlijke notitie toe..."> {% for note in huis.f_houses_id.notes %}{{ note.note }}{% endfor %}
 							</textarea>
-<div class="knoppen">
-	{% comment %} 
-bron:https://alvinljt.medium.com/how-to-create-an-html-form-with-multiple-and-different-form-actions-using-formaction-attribute-d530bbd2cab6 
-{% endcomment %}
-						<button type="submit" formaction="/verwijder-notitie" class="vw_knop">verwijder</button>
-						<button type="submit" class="opslaan_knop">opslaan</button>
-</div>
-					</form>
-					<a href="#WONTDO" aria-label="Popup sluiten"  class="close_popup" >X</a>
+							<div class="knoppen">
+								{% comment %}
+								bron:https://alvinljt.medium.com/how-to-create-an-html-form-with-multiple-and-different-form-actions-using-formaction-attribute-d530bbd2cab6
+								{% endcomment %}
+								<button type="submit" formaction="/verwijder-notitie" class="vw_knop">verwijder</button>
+								<button type="submit" class="opslaan_knop">opslaan</button>
+							</div>
+						</form>
+						<a href="#WONTDO" aria-label="Popup sluiten" class="close_popup">X</a>
 
+					</div>
 				</div>
-			</div>
-		{% endfor %}
-	</ul>
+				{% endfor %}
+			</ul>
 </main>
 
 {% include 'partials/foot.liquid' %}
