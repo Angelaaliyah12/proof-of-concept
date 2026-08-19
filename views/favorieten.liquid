@@ -93,6 +93,8 @@
 											<path
 												d="M42 17a10 10 0 00-18-6 10 10 0 00-18 6c0 15 16 24 18 24s18-9 18-24z">
 											</path>
+											{% comment %} bron: https://www.geeksforgeeks.org/html/svg-title-element/ {% endcomment %}
+											<title> Verwijder huis knop</title>
 										</svg>
 									</button>
 								</form>
@@ -101,38 +103,41 @@
 						<p class="stad-f">{{ huis.f_houses_id.postal_code}} {{ huis.f_houses_id.city }}</p>
 						<p class="prijs-fav">€{{ huis.f_houses_id.price}}k.k.</p>
 
-						<div class="woning-icons">
-							<div class="container-m2">
+						{% comment %} 
+						bron: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dd 
+						{% endcomment %}
+						<dl class="woning-icons">
+								<dt>
 								<svg class="svg-m2" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 									viewBox="0 0 48 48">
 									<path
 										d="M38.5 32.25v-16.5a5 5 0 10-6.25-6.25h-16.5a5 5 0 10-6.25 6.25v16.5a5 5 0 106.25 6.25h16.5a5 5 0 106.25-6.25zm-6.25 3.25h-16.5a5 5 0 00-3.25-3.25v-16.5a5 5 0 003.25-3.25h16.5a5 5 0 003.25 3.25v16.5a5 5 0 00-3.25 3.25zM37 9a2 2 0 11-2 2 2 2 0 012-2zM11 9a2 2 0 11-2 2 2 2 0 012-2zm0 30a2 2 0 112-2 2 2 0 01-2 2zm26 0a2 2 0 112-2 2 2 0 01-2 2z">
 									</path>
 								</svg>
-								<span class="svg-m2-tekst">{{ huis.f_houses_id.m2}}m²</span>
-							</div>
+								</dt>
+								<dd class="svg-m2-tekst">{{ huis.f_houses_id.m2}}m²</dd>
 
-							<div class="container-garden">
+							 <dt>
 								<svg class="svg-m2-garden" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 									viewBox="0 0 48 48">
 									<path
 										d="M43 5.5A1.5 1.5 0 0041.5 4h-35A1.5 1.5 0 005 5.5v37A1.5 1.5 0 006.5 44h35a1.5 1.5 0 001.5-1.5zm-35 9h13v5a1.5 1.5 0 001.5 1.5H30v20H8zm25 5a1.5 1.5 0 00-1.5-1.5H24v-5a1.5 1.5 0 00-1.5-1.5H8V7h32v34h-7z">
 									</path>
 								</svg>
-								<span class="svg-garden-tekst">{{ huis.f_houses_id.m2_garden}}m²</span>
-							</div>
+								</dt>
+								<dd class="svg-garden-tekst">{{ huis.f_houses_id.m2_garden}}m²</dd>
 
-							<div class="container-kamers">
+							 <dt>
 								<svg class="svg-kamers" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 									viewBox="0 0 48 48">
 									<path
 										d="M11 20l-3.999 5.999h33.998L37 20h3l3.999 5.999L44 26v9.5a1.5 1.5 0 01-1.5 1.5H39v1.5a1.5 1.5 0 01-3 0V37H12v1.5a1.5 1.5 0 01-3 0V37H5.5A1.5 1.5 0 014 35.5V26l.001-.001L8 20h3zm30 9H7v5h34v-5zM38.5 8A1.5 1.5 0 0140 9.5V20l-9-.001V21.5a1.5 1.5 0 01-1.5 1.5h-11a1.5 1.5 0 01-1.5-1.5v-1.501L8 20V9.5A1.5 1.5 0 019.5 8h29zM28 17h-8v3h8v-3zm9-6H11v5.999h6V15.5a1.5 1.5 0 011.5-1.5h11a1.5 1.5 0 011.5 1.5v1.499h6V11z">
 									</path>
 								</svg>
-								<span class="svg-kamers-tekst">{{ huis.f_houses_id.rooms}}</span>
-							</div>
+								</dt>
+								<dd class="svg-kamers-tekst">{{ huis.f_houses_id.rooms}}</dd>
 
-						</div>
+						</dl>
 						<p class="makelaar">{{ huis.f_houses_id.agent}}</p>
 
 					</li>

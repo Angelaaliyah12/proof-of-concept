@@ -552,13 +552,6 @@ border-radius: 5px;
     margin-top: 10px;
 }
 
-.container-m2,
-.container-garden,
-.container-kamers{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .container-machine-mobile {
  color: var(--tekst-color);
@@ -724,18 +717,16 @@ flex-direction: column;
 /* icons in kaart*/
 .woning-icons {
     display: flex;
-    flex-direction: row;
-    gap: 15px;
-    margin-left: 10px;
+    justify-content: start;
+    align-items: center;
+    gap: 2px;
+}
+.woning-icons dt,
+.woning-icons dd {
+    margin: 0;
+    margin-left: 8px;
 }
 
-.container-m2,
-.container-garden,
-.container-kamers{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
 
 
 
