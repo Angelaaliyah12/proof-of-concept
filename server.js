@@ -242,7 +242,6 @@ app.post('/notitie', async function (request, response) {
     const houseId = request.body.houseId;
     // haalt de notitie zelf op dus wat de gebruiker schrijft
     const notitie = request.body.notitie;
-
     // console.log('houseId:', houseId);
     // console.log('notitie:', notitie);
 
@@ -320,7 +319,7 @@ app.post('/verwijder-notitie', async function (request, response){
       }
     )
   }
-  response.redirect('/favorieten')
+  response.redirect('/favorieten?status=notitie-verwijderd')
 })
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
