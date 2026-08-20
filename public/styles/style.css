@@ -895,7 +895,7 @@ border: none;
             justify-content: flex-end;
 
         &.knoppen button {
-        width: 75px;
+        width: 85px;
     }
     }
 }
