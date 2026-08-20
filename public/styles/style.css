@@ -614,10 +614,7 @@ border-radius: 5px;
     margin-bottom: 30px;
 }
 /* Fav huizen kaarten*/
-.wrapper-list-note{
-display:flex;
-flex-direction: column;
-}
+
 
 
 .container {

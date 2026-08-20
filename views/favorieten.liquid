@@ -1,6 +1,5 @@
 {%include 'partials/head.liquid'%}
 <main class="main-fav">
-	<div class="fav-beschrijving">
 		<a href="#WONTDO" class="route-icons">
 			<svg class="huis-icon-f" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
 				<path
@@ -61,7 +60,6 @@
 		</a>
 
 		{% comment %} LIJST FAV {% endcomment %}
-		<div class="wrapper-list-note">
 
 			<ul class="huizen-fav">
 				{% for huis in favorieten %}
@@ -184,7 +182,7 @@
 						<p class="prijs">€ {{ huis.f_houses_id.price }}k.k.</p>
 						<a href="#WONTDO" class="contact">
 							<svg class="svg_n" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-								role="presentation" viewBox="0 0 48 48" class="mr-2 shrink-0">
+								role="presentation" viewBox="0 0 48 48">
 								<path
 									d="M42.5 10h-37A1.5 1.5 0 004 11.5v25A1.5 1.5 0 005.5 38h37a1.5 1.5 0 001.5-1.5v-25a1.5 1.5 0 00-1.5-1.5zM23.12 26.22a1.5 1.5 0 001.76 0L41 14.57V35H7V14.57zM9.95 13h28.1L24 23.15z">
 								</path>
