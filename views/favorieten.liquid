@@ -191,10 +191,10 @@
 							</svg>
 							<p> Neem contact op</p>
 						</a>
-						<p class="not-p">Mijn notities</p>
 
 						<form action="/notitie" method="POST">
 							<input type="hidden" name="houseId" value="{{huis.f_houses_id.id}}">
+							<label class="notitie-tekst"> Mijn notities</label>
 							<textarea class="notitie_veld" name="notitie" maxlength="500"
 								placeholder="Voeg hier je persoonlijke notitie toe..."> {% for note in huis.f_houses_id.notes %}{{ note.note }}{% endfor %}
 							</textarea>
