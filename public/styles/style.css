@@ -630,26 +630,11 @@ flex-direction: column;
     }
 }
 
+/* bron: https://gridbyexample.com/examples/example37/ */
 .huizen-fav{
     display: grid;
-    grid-template-columns: clamp(15.625rem, -0.248rem + 79.3651vw, 25rem);
-    gap: 25px;
-    justify-content: center;
-
-    @media (min-width:510px) {
-        grid-template-columns: repeat(2, 250px);
-        gap: 5px;
-    }
-
-    @media (min-width:768px) {
-        grid-template-columns: repeat(3, 250px);
-        gap: 5px;
-    }
-
-    @media (min-width:1024px) {
-        grid-template-columns: repeat(4, 250px);
-        gap: 30px;
-    }
+        grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+        grid-gap: 35px;
 } 
 
 .huizen-lijst-fav {
