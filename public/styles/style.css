@@ -801,18 +801,14 @@ flex-direction: column;
     transition: 0.65s ease-in-out;
 } 
 .popup_inner{
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 670px;
-    height: 470px;
+    width:clamp(17.5rem, 9.375rem + 40.625vw, 41.875rem);
     background-color: white;
     border-radius: 1rem;
     overflow:auto;
-    bottom: -100vw;
-    right: -100vh;
 }
 
 .popup:target{
@@ -878,7 +874,6 @@ form{
     outline: none;
 }
 .vw_knop{
-    width: 70px;
     height: 30px;
     color: var(--tekst-color);
     background-color: var(--header-icon-color);
@@ -889,7 +884,6 @@ form{
    }
 }
 .opslaan_knop{
-   width: 70px;
 height: 30px;
 color: var(--header-icon-color);
 background-color: var(--header-color); 
@@ -901,8 +895,23 @@ border: none;
 }
 .knoppen{
     display:flex;
+    flex-direction: column;
+    width: 100%;
     gap: 10px;
+    
+     
+    @media (min-width: 768px){
+        display: flex;
+        flex-direction: row;
+            justify-content: flex-end;
+
+        &.knoppen button {
+        width: 75px;
+    }
+    }
 }
+
+
 .close_popup{
     display: flex;
     justify-content: center;
