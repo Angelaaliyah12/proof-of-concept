@@ -1,3 +1,23 @@
+/* bron: https://support.monotype.com/en/articles/11496573-font-formats */
+@font-face {
+  font-family: "Proxima-bold";
+  src: url("/fonts/Proxima\ Nova\ Extrabold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Proxima-light";
+  src: url("/fonts/Proxima\ Nova\ Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Proxima";
+    src: url("/fonts/Proxima\ Nova\ Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Proxima-semi-bold";
+      src: url("/fonts/Proxima\ Nova\ Semibold.ttf") format("truetype");
+}
+
+
+
 :root{
     --header-color:  #FF9B12;
     --header-icon-color:white;
@@ -9,6 +29,7 @@
 }
 body{
     margin:0;
+    font-family: "Proxima";
 }
 
 button{
@@ -206,7 +227,7 @@ ul{
     }
 }
 .straat{
-    font-weight: bold;
+    font-family: "Proxima-bold";
     color:var(--tekst-color)
 }
 .prijs{
@@ -602,6 +623,7 @@ border-radius: 5px;
 }
 
 .tekst-fav {
+    font-family: "Proxima-light";
     width: clamp(15.625rem, 10.4167rem + 26.0417vw, 31.25rem);
     font-size: 16px;
 }
